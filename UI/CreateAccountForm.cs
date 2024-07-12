@@ -92,7 +92,8 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                 var controller = new UserController();
                 // Catching any exceptions that may occur
                 var result = controller.CreateUser(EmployeeNumber, FullName, Birthdate, Password);
-                switch (result) {
+                switch (result)
+                {
                     case 0:
                         Validation.ShowErrorMessage("The employee number already exists. Please enter a unique employee number.");
                         break;
@@ -144,6 +145,21 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
         {
             ConfirmPassShowBttn.BringToFront();
             confirmpass.PasswordChar = '\0';
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
