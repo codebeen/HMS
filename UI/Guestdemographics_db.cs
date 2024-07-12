@@ -60,7 +60,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             };
 
             // Calculate age groups and sex frequencies based on 'guests' list
-            int count25to34 = 0, count35to54 = 0, count54andUp = 0;
+            int count18to34 = 0, count35to54 = 0, count54andUp = 0;
             int countMale = 0, countFemale = 0;
 
             foreach (var guest in guests)
@@ -68,30 +68,30 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                 int age = CalculateAge(guest.DateOfBirth);
 
                 // Count guests in age groups
-                if (age >= 25 && age <= 34)
-                    count25to34++;
+                if (age >= 18 && age <= 34)
+                    count18to34++;
                 else if (age >= 35 && age <= 54)
                     count35to54++;
                 else if (age >= 55)
                     count54andUp++;
 
-               /* // Count guests by sex
+              /* // Count guests by sex
                 if (guest.Gender == "Male")
                     countMale++;
                 else if (guest.Gender == "Female")
-                    countFemale++;*/
+                    countFemale++;*/ 
             }
 
             // Define LineSeries for Age groups
             LineSeries ageSeries = new LineSeries { Title = "Age" };
-            ageSeries.Points.Add(new DataPoint(0, 301)); // 25 to 34
-            ageSeries.Points.Add(new DataPoint(1, 140)); // 45 to 54
-            ageSeries.Points.Add(new DataPoint(2, 100)); // 64 or over
+            ageSeries.Points.Add(new DataPoint(0, count18to34)); // 25 to 34
+            ageSeries.Points.Add(new DataPoint(1, count35to54)); // 45 to 54
+            ageSeries.Points.Add(new DataPoint(2, count54andUp)); // 64 or over
 
             // Define LineSeries for Sex groups
             LineSeries sexSeries = new LineSeries { Title = "Sex" };
-            sexSeries.Points.Add(new DataPoint(3, 584)); // Male
-            sexSeries.Points.Add(new DataPoint(4, 416)); // Female
+            sexSeries.Points.Add(new DataPoint(3, countMale)); // Male
+            sexSeries.Points.Add(new DataPoint(4, countFemale)); // Female
 
             // Add Axes and Series to the PlotModel
             plotModel.Axes.Add(categoryAxis);

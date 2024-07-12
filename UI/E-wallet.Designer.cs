@@ -480,6 +480,7 @@
             guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges27;
             guna2ImageButton1.Size = new Size(61, 45);
             guna2ImageButton1.TabIndex = 43;
+            guna2ImageButton1.Click += guna2ImageButton1_Click;
             // 
             // GcashPanel
             // 
@@ -492,6 +493,7 @@
             GcashPanel.Size = new Size(379, 45);
             GcashPanel.TabIndex = 39;
             GcashPanel.Click += RunGcashPayment;
+            GcashPanel.Paint += GcashPanel_Paint;
             GcashPanel.MouseEnter += Panel_MouseEnter;
             GcashPanel.MouseLeave += Panel_MouseLeave;
             // 

@@ -1,4 +1,4 @@
-﻿using HOTEL_MANAGEMENT_SYSTEM.Models;
+﻿    using HOTEL_MANAGEMENT_SYSTEM.Models;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;

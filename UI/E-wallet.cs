@@ -1,23 +1,13 @@
-﻿using HOTEL_MANAGEMENT_SYSTEM.Controllers;
-using HOTEL_MANAGEMENT_SYSTEM.Models;
+﻿using HOTEL_MANAGEMENT_SYSTEM.Models;
 using HOTEL_MANAGEMENT_SYSTEM.Utilities;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RestSharp;
-using System;
 using System.Diagnostics;
-using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Automation;
-using System.Windows.Forms;
 
 namespace HOTEL_MANAGEMENT_SYSTEM.UI
 {
     public partial class E_wallet : Form
     {
         private readonly PayMongoClient payMongoClient;
-        private PaymentUtility paymentUtility;
+        private readonly ExceptionHandling eh = new ExceptionHandling();
         private string sourceId; // Store the source ID for later use
 
         public int selectedRoomId;
@@ -29,7 +19,6 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             InitializeComponent();
 
             payMongoClient = new PayMongoClient();
-            paymentUtility = new PaymentUtility();
 
             // MouseEnter and MouseLeave events for hover effect
             GcashPanel.MouseEnter += Panel_MouseEnter;
@@ -80,82 +69,93 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
 
         public async Task PayWithCard(string bankName, string cardNumber, int expMonth, int expYear, string cvc)
         {
-            var paymentClient = new PayMongoClient();
-
-            // Step 1: Create a payment method
-            var paymentMethodId = await paymentClient.CreatePaymentMethod(bankName, cardNumber, expMonth, expYear, cvc);
-
-            if (paymentMethodId != null)
+            try
             {
-                // Step 2: Create a payment intent
-                var paymentIntentId = await paymentClient.CreatePaymentIntent(15000m);
+                var paymentClient = new PayMongoClient();
 
-                if (paymentIntentId != null)
+                // Step 1: Create a payment method
+                var paymentMethodId = await paymentClient.CreatePaymentMethod(bankName, cardNumber, expMonth, expYear, cvc);
+
+                if (paymentMethodId != null)
                 {
-                    // Step 3: Attach the payment method to the payment intent
-                    var attachResult = await paymentClient.AttachPaymentMethodToIntent(paymentIntentId, paymentMethodId);
+                    // Step 2: Create a payment intent
+                    var paymentIntentId = await paymentClient.CreatePaymentIntent(15000m);
 
-                    if (attachResult)
+                    if (paymentIntentId != null)
                     {
-                        // Step 4: Check the status of the payment
-                        string status = await paymentClient.CheckPaymentStatus(paymentIntentId);
+                        // Step 3: Attach the payment method to the payment intent
+                        var attachResult = await paymentClient.AttachPaymentMethodToIntent(paymentIntentId, paymentMethodId);
 
-                        MessageBox.Show("Initial Payment Status: " + status);
-
-                        while (status != "succeeded" && status != "failed")
+                        if (attachResult)
                         {
-                            await Task.Delay(5000); // Wait for 5 seconds before checking again
-                            status = await paymentClient.CheckPaymentStatus(paymentIntentId);
-                            MessageBox.Show("Payment Status: " + status);
-                        }
+                            // Step 4: Check the status of the payment
+                            string status = await paymentClient.CheckPaymentStatus(paymentIntentId);
 
-                        MessageBox.Show("Final Payment Status: " + status);
+                            MessageBox.Show("Initial Payment Status: " + status);
 
-                        // Redirect based on payment status
-                        if (status == "succeeded")
-                        {
-                            using (var context = new DataContext())
+                            DateTime startTime = DateTime.Now;
+                            TimeSpan timeout = TimeSpan.FromSeconds(60);
+                            while (status != "succeeded" && status != "failed" && DateTime.Now - startTime < timeout)
                             {
-                                // get the room price of the selected roomId
-                                var roomPrice = context.Rooms.Where(r => r.RoomId == selectedRoomId).Select(r => r.RoomPrice).FirstOrDefault();
-
-                                double vat = roomPrice * 0.12;
-                                double localTax = roomPrice * 0.03;
-                                double serviceCharge = roomPrice * 0.10;
-
-                                double totalAmount = roomPrice + vat + localTax + serviceCharge;
-
-                                Payment payment = new Payment();
-
-                                payment.PaymentId = newBooking.BookingId;
-                                payment.PaymentMethod = "Card Payment";
-                                payment.Amount = totalAmount;
-                                payment.Currency = "PHP";
-                                payment.Status = "Completed";
-                                payment.PaymentDate = DateTime.Now;
-
-                                payment.PayMongoTransactionId = "N/A";
-                                payment.PayMongoPaymentIntentId = paymentIntentId;
-                                payment.PayMongoPaymentMethodId = paymentMethodId;
-
-                                RedirectToBookingSummary(payment);
+                                await Task.Delay(5000); // Wait for 5 seconds before checking again
+                                status = await paymentClient.CheckPaymentStatus(paymentIntentId);
+                                MessageBox.Show("Payment Status: " + status);
                             }
+
+                            MessageBox.Show("Final Payment Status: " + status);
+
+                            // Redirect based on payment status
+                            if (status == "succeeded")
+                            {
+                                using (var context = new DataContext())
+                                {
+                                    // get the room price of the selected roomId
+                                    var roomPrice = context.Rooms.Where(r => r.RoomId == selectedRoomId).Select(r => r.RoomPrice).FirstOrDefault();
+
+                                    double vat = roomPrice * 0.12;
+                                    double localTax = roomPrice * 0.03;
+                                    double serviceCharge = roomPrice * 0.10;
+
+                                    double totalAmount = roomPrice + vat + localTax + serviceCharge;
+
+                                    Payment payment = new Payment();
+
+                                    payment.PaymentId = 0;
+                                    payment.PaymentMethod = "Card Payment";
+                                    payment.Amount = totalAmount;
+                                    payment.Currency = "PHP";
+                                    payment.Status = "Completed";
+                                    payment.PaymentDate = DateTime.Now;
+
+                                    payment.PayMongoTransactionId = "N/A";
+                                    payment.PayMongoPaymentIntentId = paymentIntentId;
+                                    payment.PayMongoPaymentMethodId = paymentMethodId;
+
+                                    RedirectToBookingSummary(payment);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to attach payment method.");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Failed to attach payment method.");
+                        MessageBox.Show("Failed to create payment intent.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Failed to create payment intent.");
+                    MessageBox.Show("Failed to create payment method.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Failed to create payment method.");
+                eh.HandleException(ex);
             }
+
+
         }
 
         private async void RunGcashPayment(object sender, EventArgs e)
@@ -279,7 +279,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
 
                             Payment payment = new Payment();
 
-                            payment.PaymentId = newBooking.BookingId;
+                            payment.PaymentId = 0;
                             payment.PaymentMethod = "E-Wallet Payment";
                             payment.Amount = totalAmount;
                             payment.Currency = "PHP";
@@ -356,6 +356,16 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             BookingSummary bookingSummaryForm = new BookingSummary(selectedRoomId, guestInfo, newBooking, payment);
             bookingSummaryForm.Show();
             this.Hide();
+        }
+
+        private void GcashPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

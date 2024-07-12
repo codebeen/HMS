@@ -20,7 +20,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Controllers
 
                     string salt = PasswordHasher.GenerateSalt();
                     string saltedPassword = PasswordHasher.HashPassword(password, salt);
-                    string jobposition = "Admin";
+                    string jobposition = "Receptionist";
                     string schedule = "M, 9:00 am to 6:00 pm, T, 9:00 am to 6:00 pm, W, 9:00 am to 6:00 pm, TH, 9:00 am to 6:00 pm, F, 9:00 am to 6:00 pm, SAT, 9:00 am to 6:00 pm, S, 9:00 am to 6:00 pm";
 
                     byte[] defaultProfilePicture = ImageHelper.ImageToByteArray(Properties.Resources.defaultprofilepicture);

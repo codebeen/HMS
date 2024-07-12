@@ -19,7 +19,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
         private int selectedRoomId;
         private Guest guestInfo;
         private Booking newBooking;
-        private Payment payment;
+        private Payment newPayment;
         private double valueAddedTax;
         private double localTax;
         private double serviceCharge;
@@ -28,6 +28,10 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
         public BookingSummary(int roomId, Guest guest, Booking booking, Payment payment)
         {
             InitializeComponent();
+
+            guestInfo = guest;
+            newBooking = booking;
+            newPayment = payment;
 
         }
 
@@ -128,7 +132,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                         transaction.TransactionType = "Add Guest";
                         transaction.TransactionDate = DateTime.Now;
                         transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                        transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                        transaction.EmployeeName = UserSession.EmployeeName;
 
                         TransactionController transactionController = new TransactionController();
                         bool result = transactionController.AddTransaction(transaction);
@@ -137,59 +141,57 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                         {
                             MessageBox.Show("Transaction added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
-                        // add the payment record to the database
-                        PaymentController paymentController = new PaymentController();
-                        bool paymentAdded = paymentController.AddPayment(payment);
-
-                        if (paymentAdded)
+                        try
                         {
-                            // Add Transaction for Payment
-                            Transaction transaction_2 = new Transaction();
+                            // add the guestid to the booking record
+                            newBooking.GuestId = guestInfo.GuestId;
 
-                            transaction.TransactionType = "Add Payment";
-                            transaction.TransactionDate = DateTime.Now;
-                            transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                            transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                            // add the paymentid to the booking record
+                            newPayment.BookingId = newBooking.BookingId;
 
-                            TransactionController transactionController_2 = new TransactionController();
-                            bool result_2 = transactionController.AddTransaction(transaction);
+                            // add the booking record to the database
+                            BookingController bookingController = new BookingController();
+                            bool bookingAdded = bookingController.AddBooking(newBooking);
 
-                            if (result_2)
+                            if (bookingAdded)
                             {
-                                MessageBox.Show("Transaction added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
+                                // Add Transaction for booking
+                                Transaction transaction_1 = new Transaction();
 
-                            try
-                            {
-                                // add the guestid to the booking record
-                                newBooking.GuestId = guestInfo.GuestId;
+                                transaction.TransactionType = "Add Booking";
+                                transaction.TransactionDate = DateTime.Now;
+                                transaction.TransactionTime = DateTime.Now.TimeOfDay;
+                                transaction.EmployeeName = UserSession.EmployeeName;
 
-                                // add the paymentid to the booking record
-                                newBooking.PaymentId = payment.PaymentId;
+                                TransactionController transactionController_1 = new TransactionController();
+                                bool result_1 = transactionController.AddTransaction(transaction);
 
-                                // add the booking record to the database
-                                BookingController bookingController = new BookingController();
-                                bool bookingAdded = bookingController.AddBooking(newBooking);
-
-                                if (bookingAdded)
+                                if (result_1)
                                 {
-                                    // Add Transaction for booking
-                                    Transaction transaction_1 = new Transaction();
+                                    MessageBox.Show("Transaction added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
 
-                                    transaction.TransactionType = "Add Booking";
+                                // add the payment record to the database
+                                PaymentController paymentController = new PaymentController();
+                                bool paymentAdded = paymentController.AddPayment(newPayment);
+
+                                if (paymentAdded)
+                                {
+                                    // Add Transaction for Payment
+                                    Transaction transaction_2 = new Transaction();
+
+                                    transaction.TransactionType = "Add Payment";
                                     transaction.TransactionDate = DateTime.Now;
                                     transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                                    transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                                    transaction.EmployeeName = UserSession.EmployeeName;
 
-                                    TransactionController transactionController_1 = new TransactionController();
-                                    bool result_1 = transactionController.AddTransaction(transaction);
+                                    TransactionController transactionController_2 = new TransactionController();
+                                    bool result_2 = transactionController.AddTransaction(transaction);
 
-                                    if (result_1)
+                                    if (result_2)
                                     {
                                         MessageBox.Show("Transaction added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
-
 
                                     // update the status of the selected room to occupied
                                     RoomController roomController = new RoomController();
@@ -205,12 +207,12 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                                     throw new Exception("Booking failed. Please try again.");
                                 }
                             }
-                            catch
+                            else
                             {
-                                throw new Exception("Payment failed. Please try again.");
+                                MessageBox.Show("Booking not added successfully.","Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
-                        else
+                        catch
                         {
                             throw new Exception("Payment failed. Please try again.");
                         }

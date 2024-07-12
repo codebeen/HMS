@@ -87,7 +87,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                         , booking.CheckInDate
                         , booking.CheckOutDate
                         , booking.BookingDate
-                        , booking.IsCancelled
+                        , booking.Status
                     );
                 }
             }
@@ -111,7 +111,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
 
                 // load the data to datagridview
                 AddBookingRecords(filteredBookings);
-                
+
             }
             catch (Exception ex)
             {
@@ -147,13 +147,13 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                         AddBookingRecords(searchedBookings);
                     }
                 }
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }   
+        }
 
         private void ReservationEditBttn_Click(object sender, EventArgs e)
         {
@@ -236,7 +236,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                     var checkInDate = Convert.ToDateTime(selectedRow.Cells[8].Value);
                     var checkOutDate = Convert.ToDateTime(selectedRow.Cells[9].Value);
                     var bookingDate = Convert.ToDateTime(selectedRow.Cells[10].Value);
-                    bool isCancelled = Convert.ToBoolean(selectedRow.Cells[11].Value);
+                    string status = selectedRow.Cells[11].Value.ToString();
 
                     // check the roomType to assign room number
                     Room room = CheckRoomType(roomType, roomNumber);
@@ -256,7 +256,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                         CheckInDate = checkInDate,
                         CheckOutDate = checkOutDate,
                         BookingDate = bookingDate,
-                        IsCancelled = isCancelled
+                        Status = status
                     };
                 }
             }

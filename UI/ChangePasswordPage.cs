@@ -129,7 +129,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                         transaction.TransactionType = "Delete Standard Room";
                         transaction.TransactionDate = DateTime.Now;
                         transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                        transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                        transaction.EmployeeName = UserSession.EmployeeName;
 
                         TransactionController transactionController = new TransactionController();
                         bool result2 = transactionController.AddTransaction(transaction);

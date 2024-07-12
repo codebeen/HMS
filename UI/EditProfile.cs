@@ -86,7 +86,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                         transaction.TransactionType = "Modify User Details";
                         transaction.TransactionDate = DateTime.Now;
                         transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                        transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                        transaction.EmployeeName = UserSession.EmployeeName;
 
                         TransactionController transactionController = new TransactionController();
                         bool result1 = transactionController.AddTransaction(transaction);

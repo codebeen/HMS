@@ -56,7 +56,7 @@
             checkInDate = new DataGridViewTextBoxColumn();
             checkOutDate = new DataGridViewTextBoxColumn();
             bookingDate = new DataGridViewTextBoxColumn();
-            isCancelled = new DataGridViewTextBoxColumn();
+            status = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)ReservationGridView).BeginInit();
             SuspendLayout();
             // 
@@ -161,7 +161,7 @@
             ReservationGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             ReservationGridView.ColumnHeadersHeight = 40;
             ReservationGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            ReservationGridView.Columns.AddRange(new DataGridViewColumn[] { bookingID, roomID, guestID, roomNumber, guestName, roomType, noOfGuest, modeOfPayment, checkInDate, checkOutDate, bookingDate, isCancelled });
+            ReservationGridView.Columns.AddRange(new DataGridViewColumn[] { bookingID, roomID, guestID, roomNumber, guestName, roomType, noOfGuest, modeOfPayment, checkInDate, checkOutDate, bookingDate, status });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -257,11 +257,10 @@
             bookingDate.HeaderText = "Booking Date";
             bookingDate.Name = "bookingDate";
             // 
-            // isCancelled
+            // status
             // 
-            isCancelled.HeaderText = "IsCancelled";
-            isCancelled.Name = "isCancelled";
-            isCancelled.Visible = false;
+            status.HeaderText = "Status";
+            status.Name = "status";
             // 
             // Reservations
             // 
@@ -299,6 +298,6 @@
         private DataGridViewTextBoxColumn checkInDate;
         private DataGridViewTextBoxColumn checkOutDate;
         private DataGridViewTextBoxColumn bookingDate;
-        private DataGridViewTextBoxColumn isCancelled;
+        private DataGridViewTextBoxColumn status;
     }
 }

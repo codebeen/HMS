@@ -1,7 +1,6 @@
 ﻿using HOTEL_MANAGEMENT_SYSTEM.Controllers;
 using HOTEL_MANAGEMENT_SYSTEM.Models;
 using HOTEL_MANAGEMENT_SYSTEM.UI;
-using HOTEL_MANAGEMENT_SYSTEM.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,22 +47,6 @@ namespace HOTEL_MANAGEMENT_SYSTEM
 
                     if (successEdit)
                     {
-                        // Add Transaction for booking
-                        Transaction transaction = new Transaction();
-
-                        transaction.TransactionType = "Modify Booking";
-                        transaction.TransactionDate = DateTime.Now;
-                        transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                        transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
-
-                        TransactionController transactionController = new TransactionController();
-                        bool result = transactionController.AddTransaction(transaction);
-
-                        if (result)
-                        {
-                            MessageBox.Show("Transaction added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
                         MessageBox.Show("Booking record updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
 
@@ -73,14 +56,20 @@ namespace HOTEL_MANAGEMENT_SYSTEM
                         throw new Exception("Failed to update booking record");
                     }
                 }
+                // check if checkout date is greater than checkin date
+                else if (newCheckOutDate <= newCheckInDate)
+                {
+                    throw new Exception("Checkout date must be greater than checkin date.");
+                }
                 else
                 {
-                    throw new Exception("No changes made"); 
+                    throw new Exception("No changes made");
                 }
             }
             catch (Exception ex)
             {
-               MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
+                return;
             }
 
             /*
@@ -144,9 +133,6 @@ namespace HOTEL_MANAGEMENT_SYSTEM
 
                 // display the data from the bookingToEdit instance
                 DisplayData();
-
-                // assign the date range for the checkin and checkout date time picker
-                AssignDateTimePickerRange();
             }
             catch (Exception ex)
             {
@@ -172,7 +158,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM
                 modePaymentTxt.Text = bookingToEdit.ModeOfPayment;
                 CheckInDatePicker.Value = bookingToEdit.CheckInDate;
                 CheckOutDatePicker.Value = bookingToEdit.CheckOutDate;
-                isCancelledTxt.Text = bookingToEdit.IsCancelled.ToString();
+                isCancelledTxt.Text = bookingToEdit.Status.ToString();
 
             }
             catch (Exception ex)
@@ -210,17 +196,6 @@ namespace HOTEL_MANAGEMENT_SYSTEM
 
                 return guestAddress;
             }
-        }
-
-        // method to assign date range in checkin and checkout date time picker
-        private void AssignDateTimePickerRange()
-        {
-            // assign the min value for checkin datetime picker
-            CheckInDatePicker.MinDate = DateTime.Now;
-
-            // assign min value for checkout datetime picker
-            CheckOutDatePicker.MinDate = bookingToEdit.CheckInDate;
-
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

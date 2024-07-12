@@ -7,6 +7,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Controllers
     public class TransactionController
     {
         private readonly DataContext dbContext; // Replace YourDbContext with your actual DbContext class
+        private readonly ExceptionHandling eh = new();
 
         public TransactionController()
         {
@@ -29,8 +30,21 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Controllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                eh.HandleException(ex);
                 return false;
+            }
+        }
+
+        public List<Transaction> GetAllTransactions()
+        {
+            try
+            {
+                return dbContext.Transactions.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Failed to Retrieve Transactions", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<Transaction>();
             }
         }
 

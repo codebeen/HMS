@@ -4,6 +4,7 @@ using OxyPlot.Axes;
 using OxyPlot.Series;
 using OxyPlot.WindowsForms;
 using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace HOTEL_MANAGEMENT_SYSTEM.UI
@@ -28,74 +29,74 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                 Background = OxyColor.FromRgb(240, 240, 240) // Light gray color
             };
 
-            // Define X Axis as CategoryAxis for dates
+            // Define X Axis as CategoryAxis for months
             CategoryAxis categoryAxis = new CategoryAxis
             {
                 Position = AxisPosition.Bottom,
-                Title = "Date"
+                Title = "Month"
             };
-            categoryAxis.Labels.Add("Day Before Yesterday");
-            categoryAxis.Labels.Add("Yesterday");
-            categoryAxis.Labels.Add("Today");
 
             // Define Y Axis as LinearAxis for revenues
             LinearAxis linearAxis = new LinearAxis
             {
                 Position = AxisPosition.Left,
-                Title = "Amount per Type of Payment (PHP)"
+                Title = "Revenue"
             };
 
             // Retrieve data from database and calculate revenues
             using (var context = new DataContext())
             {
-                DateTime today = DateTime.Today;
-                DateTime yesterday = today.AddDays(-1);
-                DateTime dayBeforeYesterday = today.AddDays(-2);
-
                 var revenueData = context.Payments
-                    .Where(p => p.PaymentDate.Date == today || p.PaymentDate.Date == yesterday || p.PaymentDate.Date == dayBeforeYesterday)
-                    .GroupBy(p => new { p.PaymentDate.Date, p.PaymentMethod })
+                    .GroupBy(p => new { p.PaymentDate.Month, p.PaymentMethod })
                     .Select(g => new
                     {
-                        Date = g.Key.Date,
+                        Month = g.Key.Month,
                         PaymentMethod = g.Key.PaymentMethod,
                         TotalAmount = g.Sum(p => p.Amount)
                     })
                     .ToList();
 
-                // Define BarSeries for different dates
-                BarSeries dayBeforeYesterdaySeries = new BarSeries { Title = "Day Before Yesterday" };
-                BarSeries yesterdaySeries = new BarSeries { Title = "Yesterday" };
-                BarSeries todaySeries = new BarSeries { Title = "Today" };
+                // Determine months with data
+                var availableMonths = revenueData.Select(r => r.Month).Distinct().OrderBy(m => m).ToList();
 
-                foreach (var data in revenueData)
+                // Create a dictionary to map payment methods to numerical values
+                Dictionary<string, double> paymentMethodMap = new Dictionary<string, double>();
+                int index = 0;
+                foreach (var method in revenueData.Select(r => r.PaymentMethod).Distinct())
                 {
-                    BarItem barItem = new BarItem(data.TotalAmount);
-
-                    if (data.Date == dayBeforeYesterday)
-                    {
-                        dayBeforeYesterdaySeries.Items.Add(barItem);
-                    }
-                    else if (data.Date == yesterday)
-                    {
-                        yesterdaySeries.Items.Add(barItem);
-                    }
-                    else if (data.Date == today)
-                    {
-                        todaySeries.Items.Add(barItem);
-                    }
+                    paymentMethodMap[method] = index++;
                 }
 
-                // Add Axes and Series to the PlotModel
+                // Create LineSeries for each month's revenue
+                foreach (var month in availableMonths)
+                {
+                    var monthRevenueData = revenueData.Where(r => r.Month == month).ToList();
+
+                    LineSeries monthSeries = new LineSeries
+                    {
+                        Title = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month),
+                        StrokeThickness = 2
+                    };
+
+                    foreach (var data in monthRevenueData)
+                    {
+                        // Use the mapped value for PaymentMethod as X, and TotalAmount as Y
+                        double xValue = paymentMethodMap[data.PaymentMethod];
+                        double yValue = data.TotalAmount;
+                        monthSeries.Points.Add(new DataPoint(xValue, yValue));
+                    }
+
+                    plotModel.Series.Add(monthSeries);
+                }
+
+                // Add Axes to the PlotModel
                 plotModel.Axes.Add(categoryAxis);
                 plotModel.Axes.Add(linearAxis);
-                plotModel.Series.Add(dayBeforeYesterdaySeries);
-                plotModel.Series.Add(yesterdaySeries);
-                plotModel.Series.Add(todaySeries);
 
                 // Set the PlotModel to the PlotView
                 PV.Model = plotModel;
             }
         }
-    }   
+
+    }
 }

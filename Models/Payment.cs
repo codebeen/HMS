@@ -10,6 +10,8 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Auto increment
         public int PaymentId { get; set; }
 
+        public int BookingId { get; set; }
+
         // Indicates the payment method, e.g., "Cash", "Credit Card", "PayMongo"
         [Required]
         [MaxLength(50)]
@@ -37,5 +39,8 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
         public string? PayMongoTransactionId { get; set; }
         public string? PayMongoPaymentIntentId { get; set; }
         public string? PayMongoPaymentMethodId { get; set; }
+
+        public virtual Booking Booking { get; set; }
+
     }
 }

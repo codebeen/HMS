@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using HOTEL_MANAGEMENT_SYSTEM.Controllers;
 using System;
 //using System.Drawing;
 using System.Windows.Forms;
@@ -78,6 +79,20 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             panel.FillColor2 = Color.FromArgb(13, 29, 20);
             panel.FillColor3 = Color.FromArgb(16, 19, 20);
             panel.FillColor4 = Color.FromArgb(16, 19, 20);
+        }
+
+        private void Dashboard_admin_Load(object sender, EventArgs e)
+        {
+            // display the data for total of rooms
+            RoomController roomController = new RoomController();
+            totalRoomsTxt.Text = roomController.CountTotalRooms().ToString();
+
+            //  display the total staying guests
+            BookingController bookingController = new BookingController();
+            stayTxt.Text = bookingController.CountStayingGuests().ToString();
+
+            // display the upcoming bookings
+            upcomingBookingsTxt.Text = bookingController.CountUpcomingBookings().ToString();
         }
     }
 }

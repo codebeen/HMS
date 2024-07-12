@@ -25,13 +25,12 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
         private string year;
         private string cvv;
 
-        private PaymentUtility paymentUtility;
+
         private string bankName;
 
         public CardPayment(string bName, int roomId, Guest guest, Booking booking)
         {
             InitializeComponent();
-            paymentUtility = new PaymentUtility();
             this.bankName = bName;
         }
 
@@ -51,8 +50,17 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
 
             // Pass the arguments to pay with card
 
-            E_wallet e_Wallet = new E_wallet(selectedRoomId, guestInfo, newBooking);
-            e_Wallet.payWithCard(bankName, Account, month, year, cvv);
+            // Perform validation
+            if (ValidateAccountNumber(Account) && ValidateExpirationDate(month, year) && ValidateCVV(cvv))
+            {
+                // Valid inputs, proceed with payment
+                E_wallet e_Wallet = new E_wallet(selectedRoomId, guestInfo, newBooking);
+                e_Wallet.payWithCard(bankName, Account, month, year, cvv);
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid card details.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void SRNavback_Click(object sender, EventArgs e)
@@ -61,5 +69,47 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             E_wallet e_Wallet = new E_wallet(selectedRoomId, guestInfo, newBooking);
             e_Wallet.Show();
         }
+
+        private bool ValidateAccountNumber(string accountNumber)
+        {
+            // Check if account number is not empty and meets specific criteria (e.g., length)
+            return !string.IsNullOrWhiteSpace(accountNumber) && accountNumber.Length >= 12 && accountNumber.Length <= 19;
+        }
+
+        private bool ValidateExpirationDate(string month, string year)
+        {
+            // Validate expiration month (1-12) and year (current year onwards)
+            if (!int.TryParse(month, out int expMonth) || !int.TryParse(year, out int expYear))
+            {
+                return false;
+            }
+
+            int currentYear = DateTime.Today.Year;
+
+            // Check if year is valid (current year onwards)
+            if (expYear < currentYear) // Adjust 10 as per your business logic
+            {
+                return false;
+            }
+
+            // Check if month is valid (1-12)
+            if (expMonth < 1 || expMonth > 12)
+            {
+                return false;
+            }
+
+            // Optional: You may want to check if the expiration date is in the future
+            // DateTime expirationDate = new DateTime(expYear, expMonth, DateTime.DaysInMonth(expYear, expMonth));
+            // if (expirationDate < DateTime.Today) return false;
+
+            return true;
+        }
+
+        private bool ValidateCVV(string cvv)
+        {
+            // CVV should be numeric and 3 or 4 digits long
+            return !string.IsNullOrWhiteSpace(cvv) && cvv.Length == 3 && int.TryParse(cvv, out _);
+        }
     }
 }
+    

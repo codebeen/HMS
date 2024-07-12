@@ -70,7 +70,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM
                         booking.NumberOfGuest = numberOfGuests;
                         booking.RoomId = selectedRoomId;
                         booking.RoomType = roomType;
-                        booking.IsCancelled = false;
+                        booking.Status = "Upcoming";
 
                         // navigate to the next page
                         this.Close();
@@ -242,6 +242,12 @@ namespace HOTEL_MANAGEMENT_SYSTEM
                 // get the number of guest
                 numberOfGuests = Convert.ToInt32(numberOfGuestText.Text);
 
+                // check if checkout date is greater than checkin date
+                if (checkoutDate <= checkinDate)
+                {
+                    throw new Exception("Checkout date must be greater than checkin date.");
+                }
+
                 // update the room status based on filtered checkin and checkout date
                 UpdateRoomStatus();
 
@@ -274,7 +280,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM
 
                         // get the bookings that are not cancelled
                         var bookings = context.Bookings
-                            .Where(b => b.RoomId == room.RoomId && !b.IsCancelled)
+                            .Where(b => b.RoomId == room.RoomId && (b.Status != "Cancelled" || b.Status != "Done"))
                             .ToList();
 
                         // loop through each booking

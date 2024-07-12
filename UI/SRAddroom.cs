@@ -56,13 +56,14 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                 // checks if added to the database
                 if (success == true)
                 {
+                    
                     // Add Transaction (Standard Room)
                     Transaction transaction = new Transaction();
 
                     transaction.TransactionType = "Add Standard Room";
                     transaction.TransactionDate = DateTime.Now;
                     transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                    transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                    transaction.EmployeeName = UserSession.EmployeeName;
 
                     TransactionController transactionController = new TransactionController();
                     bool result = transactionController.AddTransaction(transaction);
@@ -70,6 +71,10 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                     if (result)
                     {
                         MessageBox.Show("Transaction added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not added transac, add room");
                     }
 
                     // show success message

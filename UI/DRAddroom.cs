@@ -80,7 +80,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM
                 transaction.TransactionType = "Add Deluxe Room";
                 transaction.TransactionDate = DateTime.Now;
                 transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                transaction.EmployeeName = UserSession.EmployeeName;
 
                 TransactionController transactionController = new TransactionController();
                 bool result = transactionController.AddTransaction(transaction);
