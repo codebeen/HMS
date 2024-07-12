@@ -25,14 +25,8 @@ namespace HOTEL_MANAGEMENT_SYSTEM
             panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 20, 20));
         }
 
-        private void Createacc_Click(object sender, EventArgs e)
-        {
-            CreateAccountForm createAccountform = new CreateAccountForm();
-            createAccountform.Show();
-            this.Hide();
-        }
 
-        private void login_Click(object sender, EventArgs e)
+        private void login_Click_1(object sender, EventArgs e)
         {
             var controller = new UserController();
             var eh = new ExceptionHandling();
@@ -43,7 +37,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM
                 string password = PasswordTextbox.Text;
 
                 if (!Validation.ValidateLogin(employeeNumber, password))
-                { 
+                {
                     Validation.ShowErrorMessage("All fields must be filled out.");
                     return;
                 }
@@ -91,16 +85,23 @@ namespace HOTEL_MANAGEMENT_SYSTEM
             }
         }
 
-        private void ShowPassIcon_Click(object sender, EventArgs e)
+        private void HidePassBttn_Click_1(object sender, EventArgs e)
+        {
+            ShowPassIcon.BringToFront();
+            PasswordTextbox.PasswordChar = '\0';
+        }
+
+        private void ShowPassIcon_Click_1(object sender, EventArgs e)
         {
             HidePassBttn.BringToFront();
             PasswordTextbox.PasswordChar = '*';
         }
 
-        private void HidePassBttn_Click(object sender, EventArgs e)
+        private void Createacc_Click(object sender, EventArgs e)
         {
-            ShowPassIcon.BringToFront();
-            PasswordTextbox.PasswordChar = '\0';
+            CreateAccountForm createAccountform = new CreateAccountForm();
+            createAccountform.Show();
+            this.Hide();
         }
     }
 }
