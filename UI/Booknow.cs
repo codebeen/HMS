@@ -81,7 +81,27 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
 
         private void Booknow_Load(object sender, EventArgs e)
         {
-            DateDefault.Text = DateTime.Now.ToString();
+            //DateDefault.Text = DateTime.Now.ToString();
+        }
+
+        private void Amount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SelectRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

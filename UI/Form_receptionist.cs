@@ -9,7 +9,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
         public Form_receptionist()
         {
             InitializeComponent();
-            Transactions uc = new Transactions();
+            Booknow uc = new Booknow();
             addUserControl(uc);
         }
 
