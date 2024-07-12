@@ -16,7 +16,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.Models
         public DateTime TransactionDate { get; set; }
         public TimeSpan TransactionTime { get; set; }
         // Reference to User who created this transaction
-        public int EmployeeNumber { get; set; }
+        public string EmployeeNumber { get; set; }
 
         public virtual User User { get; set; }
 

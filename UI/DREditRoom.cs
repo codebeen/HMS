@@ -77,7 +77,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM
                     transaction.TransactionType = "Modify Deluxe Room";
                     transaction.TransactionDate = DateTime.Now;
                     transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                    transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                    transaction.EmployeeNumber = UserSession.EmployeeNumber;
 
                     TransactionController transactionController = new TransactionController();
                     bool result = transactionController.AddTransaction(transaction);

@@ -63,6 +63,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             panel.FillColor4 = Color.FromArgb(16, 19, 20);
         }
 
+<<<<<<< HEAD
         private void Dashboard_admin_Load(object sender, EventArgs e)
         {
 
@@ -85,5 +86,11 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             Revenue_db uc = new Revenue_db();
             addUserControl(uc);
         }
+=======
+        private void Newbookingspanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+>>>>>>> Add receptionist
     }
 }

@@ -128,7 +128,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                         transaction.TransactionType = "Add Guest";
                         transaction.TransactionDate = DateTime.Now;
                         transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                        transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                        transaction.EmployeeNumber = UserSession.EmployeeNumber;
 
                         TransactionController transactionController = new TransactionController();
                         bool result = transactionController.AddTransaction(transaction);
@@ -150,7 +150,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                             transaction.TransactionType = "Add Payment";
                             transaction.TransactionDate = DateTime.Now;
                             transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                            transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                            transaction.EmployeeNumber = UserSession.EmployeeNumber;
 
                             TransactionController transactionController_2 = new TransactionController();
                             bool result_2 = transactionController.AddTransaction(transaction);
@@ -180,7 +180,7 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
                                     transaction.TransactionType = "Add Booking";
                                     transaction.TransactionDate = DateTime.Now;
                                     transaction.TransactionTime = DateTime.Now.TimeOfDay;
-                                    transaction.EmployeeNumber = Convert.ToInt32(UserSession.EmployeeNumber);
+                                    transaction.EmployeeNumber =  UserSession.EmployeeNumber;
 
                                     TransactionController transactionController_1 = new TransactionController();
                                     bool result_1 = transactionController.AddTransaction(transaction);

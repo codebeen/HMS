@@ -357,7 +357,11 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
+<<<<<<< HEAD
             Text = "Serenitel";
+=======
+            Text = "Formloin";
+>>>>>>> Add receptionist
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);

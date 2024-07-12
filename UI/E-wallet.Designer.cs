@@ -140,32 +140,31 @@
             guna2Panel2.Controls.Add(SRNavback);
             guna2Panel2.Controls.Add(guna2Panel4);
             guna2Panel2.CustomizableEdges = customizableEdges34;
-            guna2Panel2.Location = new Point(57, 48);
-            guna2Panel2.Margin = new Padding(3, 2, 3, 2);
+            guna2Panel2.Location = new Point(65, 64);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges35;
-            guna2Panel2.Size = new Size(1146, 584);
+            guna2Panel2.Size = new Size(1310, 779);
             guna2Panel2.TabIndex = 3;
             // 
             // landbankpanel
             // 
             landbankpanel.Controls.Add(label10);
             landbankpanel.CustomizableEdges = customizableEdges1;
-            landbankpanel.Location = new Point(672, 458);
-            landbankpanel.Margin = new Padding(3, 2, 3, 2);
+            landbankpanel.Location = new Point(768, 611);
             landbankpanel.Name = "landbankpanel";
             landbankpanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            landbankpanel.Size = new Size(379, 45);
+            landbankpanel.Size = new Size(433, 60);
             landbankpanel.TabIndex = 45;
-            landbankpanel.Paint += landbankpanel_Paint;
+           // landbankpanel.Paint += landbankpanel_Paint;
+            landbankpanel.MouseClick += landbankpanel_MouseClick;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 9F);
-            label10.Location = new Point(8, 8);
+            label10.Location = new Point(9, 11);
             label10.Name = "label10";
-            label10.Size = new Size(280, 34);
+            label10.Size = new Size(343, 40);
             label10.TabIndex = 0;
             label10.Text = "Payment should be completed within 30 mins. \r\nAccessible 24/7 and may entail 2% fee.\r\n";
             // 
@@ -173,21 +172,21 @@
             // 
             unionbankpanel.Controls.Add(label9);
             unionbankpanel.CustomizableEdges = customizableEdges3;
-            unionbankpanel.Location = new Point(672, 401);
-            unionbankpanel.Margin = new Padding(3, 2, 3, 2);
+            unionbankpanel.Location = new Point(768, 535);
             unionbankpanel.Name = "unionbankpanel";
             unionbankpanel.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            unionbankpanel.Size = new Size(379, 45);
+            unionbankpanel.Size = new Size(433, 60);
             unionbankpanel.TabIndex = 44;
-            unionbankpanel.Paint += unionbankpanel_Paint;
+            //unionbankpanel.Paint += unionbankpanel_Paint;
+            unionbankpanel.MouseClick += unionbankpanel_MouseClick;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 9F);
-            label9.Location = new Point(8, 8);
+            label9.Location = new Point(9, 11);
             label9.Name = "label9";
-            label9.Size = new Size(330, 34);
+            label9.Size = new Size(412, 40);
             label9.TabIndex = 0;
             label9.Text = "Payment should be done within 1 hour upon checkout. \r\nAccessible daily Mon-Sun with additional P10 fee.";
             // 
@@ -195,43 +194,43 @@
             // 
             rcbcpanel.Controls.Add(label8);
             rcbcpanel.CustomizableEdges = customizableEdges5;
-            rcbcpanel.Location = new Point(672, 335);
-            rcbcpanel.Margin = new Padding(3, 2, 3, 2);
+            rcbcpanel.Location = new Point(768, 447);
             rcbcpanel.Name = "rcbcpanel";
             rcbcpanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            rcbcpanel.Size = new Size(379, 45);
+            rcbcpanel.Size = new Size(433, 60);
             rcbcpanel.TabIndex = 43;
+            rcbcpanel.MouseClick += rcbcpanel_MouseClick;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 9F);
-            label8.Location = new Point(8, 8);
+            label8.Location = new Point(9, 11);
             label8.Name = "label8";
-            label8.Size = new Size(330, 34);
+            label8.Size = new Size(412, 40);
             label8.TabIndex = 0;
             label8.Text = "Payment should be done within 1 hour upon checkout. \r\nAccessible daily Mon-Sun with additional P5 fee";
-            label8.Click += label8_Click;
+            //label8.Click += label8_Click;
             // 
             // eastwestpanel
             // 
             eastwestpanel.Controls.Add(label7);
             eastwestpanel.CustomizableEdges = customizableEdges7;
-            eastwestpanel.Location = new Point(203, 458);
-            eastwestpanel.Margin = new Padding(3, 2, 3, 2);
+            eastwestpanel.Location = new Point(232, 611);
             eastwestpanel.Name = "eastwestpanel";
             eastwestpanel.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            eastwestpanel.Size = new Size(379, 45);
+            eastwestpanel.Size = new Size(433, 60);
             eastwestpanel.TabIndex = 42;
-            eastwestpanel.Paint += eastwestpanel_Paint;
+            //eastwestpanel.Paint += eastwestpanel_Paint;
+            eastwestpanel.MouseClick += eastwestpanel_MouseClick;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 9F);
-            label7.Location = new Point(8, 8);
+            label7.Location = new Point(9, 11);
             label7.Name = "label7";
-            label7.Size = new Size(280, 34);
+            label7.Size = new Size(343, 40);
             label7.TabIndex = 0;
             label7.Text = "Payment should be completed within 30 mins. \r\nAccessible 24/7 and may entail 2% fee.\r\n";
             // 
@@ -239,21 +238,21 @@
             // 
             bdopanel.Controls.Add(label6);
             bdopanel.CustomizableEdges = customizableEdges9;
-            bdopanel.Location = new Point(203, 401);
-            bdopanel.Margin = new Padding(3, 2, 3, 2);
+            bdopanel.Location = new Point(232, 535);
             bdopanel.Name = "bdopanel";
             bdopanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            bdopanel.Size = new Size(379, 45);
+            bdopanel.Size = new Size(433, 60);
             bdopanel.TabIndex = 41;
-            bdopanel.Paint += bdopanel_Paint;
+            //bdopanel.Paint += bdopanel_Paint;
+            bdopanel.MouseClick += bdopanel_MouseClick;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 9F);
-            label6.Location = new Point(8, 8);
+            label6.Location = new Point(9, 11);
             label6.Name = "label6";
-            label6.Size = new Size(280, 34);
+            label6.Size = new Size(343, 40);
             label6.TabIndex = 0;
             label6.Text = "Payment should be completed within 30 mins. \r\nAccessible 24/7 and may entail 2% fee.\r\n";
             // 
@@ -261,21 +260,21 @@
             // 
             bpipanel.Controls.Add(label5);
             bpipanel.CustomizableEdges = customizableEdges11;
-            bpipanel.Location = new Point(203, 335);
-            bpipanel.Margin = new Padding(3, 2, 3, 2);
+            bpipanel.Location = new Point(232, 447);
             bpipanel.Name = "bpipanel";
             bpipanel.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            bpipanel.Size = new Size(379, 45);
+            bpipanel.Size = new Size(433, 60);
             bpipanel.TabIndex = 40;
-            bpipanel.Paint += bpipanel_Paint;
+           // bpipanel.Paint += bpipanel_Paint;
+            bpipanel.MouseClick += bpipanel_MouseClick;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 9F);
-            label5.Location = new Point(8, 8);
+            label5.Location = new Point(9, 11);
             label5.Name = "label5";
-            label5.Size = new Size(280, 34);
+            label5.Size = new Size(343, 40);
             label5.TabIndex = 0;
             label5.Text = "Payment should be completed within 30 mins. \r\nAccessible 24/7 and may entail 2% fee.\r\n";
             // 
@@ -286,12 +285,11 @@
             guna2ImageButton9.Image = (Image)resources.GetObject("guna2ImageButton9.Image");
             guna2ImageButton9.ImageOffset = new Point(0, 0);
             guna2ImageButton9.ImageRotate = 0F;
-            guna2ImageButton9.Location = new Point(596, 458);
-            guna2ImageButton9.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton9.Location = new Point(681, 611);
             guna2ImageButton9.Name = "guna2ImageButton9";
             guna2ImageButton9.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton9.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            guna2ImageButton9.Size = new Size(79, 45);
+            guna2ImageButton9.Size = new Size(90, 60);
             guna2ImageButton9.TabIndex = 51;
             // 
             // guna2ImageButton8
@@ -301,12 +299,11 @@
             guna2ImageButton8.Image = (Image)resources.GetObject("guna2ImageButton8.Image");
             guna2ImageButton8.ImageOffset = new Point(0, 0);
             guna2ImageButton8.ImageRotate = 0F;
-            guna2ImageButton8.Location = new Point(604, 401);
-            guna2ImageButton8.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton8.Location = new Point(690, 535);
             guna2ImageButton8.Name = "guna2ImageButton8";
             guna2ImageButton8.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton8.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2ImageButton8.Size = new Size(61, 45);
+            guna2ImageButton8.Size = new Size(70, 60);
             guna2ImageButton8.TabIndex = 50;
             // 
             // guna2ImageButton7
@@ -316,12 +313,11 @@
             guna2ImageButton7.Image = (Image)resources.GetObject("guna2ImageButton7.Image");
             guna2ImageButton7.ImageOffset = new Point(0, 0);
             guna2ImageButton7.ImageRotate = 0F;
-            guna2ImageButton7.Location = new Point(606, 335);
-            guna2ImageButton7.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton7.Location = new Point(693, 447);
             guna2ImageButton7.Name = "guna2ImageButton7";
             guna2ImageButton7.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton7.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            guna2ImageButton7.Size = new Size(61, 45);
+            guna2ImageButton7.Size = new Size(70, 60);
             guna2ImageButton7.TabIndex = 49;
             // 
             // guna2ImageButton6
@@ -331,12 +327,11 @@
             guna2ImageButton6.Image = (Image)resources.GetObject("guna2ImageButton6.Image");
             guna2ImageButton6.ImageOffset = new Point(0, 0);
             guna2ImageButton6.ImageRotate = 0F;
-            guna2ImageButton6.Location = new Point(136, 458);
-            guna2ImageButton6.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton6.Location = new Point(155, 611);
             guna2ImageButton6.Name = "guna2ImageButton6";
             guna2ImageButton6.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton6.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2ImageButton6.Size = new Size(61, 45);
+            guna2ImageButton6.Size = new Size(70, 60);
             guna2ImageButton6.TabIndex = 48;
             // 
             // guna2ImageButton5
@@ -346,12 +341,11 @@
             guna2ImageButton5.Image = (Image)resources.GetObject("guna2ImageButton5.Image");
             guna2ImageButton5.ImageOffset = new Point(0, 0);
             guna2ImageButton5.ImageRotate = 0F;
-            guna2ImageButton5.Location = new Point(135, 401);
-            guna2ImageButton5.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton5.Location = new Point(154, 535);
             guna2ImageButton5.Name = "guna2ImageButton5";
             guna2ImageButton5.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton5.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            guna2ImageButton5.Size = new Size(61, 45);
+            guna2ImageButton5.Size = new Size(70, 60);
             guna2ImageButton5.TabIndex = 47;
             // 
             // guna2ImageButton4
@@ -361,12 +355,11 @@
             guna2ImageButton4.Image = (Image)resources.GetObject("guna2ImageButton4.Image");
             guna2ImageButton4.ImageOffset = new Point(0, 0);
             guna2ImageButton4.ImageRotate = 0F;
-            guna2ImageButton4.Location = new Point(135, 335);
-            guna2ImageButton4.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton4.Location = new Point(154, 447);
             guna2ImageButton4.Name = "guna2ImageButton4";
             guna2ImageButton4.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton4.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2ImageButton4.Size = new Size(61, 45);
+            guna2ImageButton4.Size = new Size(70, 60);
             guna2ImageButton4.TabIndex = 46;
             // 
             // guna2Panel6
@@ -375,11 +368,10 @@
             guna2Panel6.Controls.Add(label4);
             guna2Panel6.CustomizableEdges = customizableEdges19;
             guna2Panel6.FillColor = Color.FromArgb(13, 22, 29);
-            guna2Panel6.Location = new Point(128, 272);
-            guna2Panel6.Margin = new Padding(3, 2, 3, 2);
+            guna2Panel6.Location = new Point(146, 363);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Panel6.Size = new Size(911, 48);
+            guna2Panel6.Size = new Size(1041, 64);
             guna2Panel6.TabIndex = 27;
             // 
             // label4
@@ -387,9 +379,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(20, 15);
+            label4.Location = new Point(23, 20);
             label4.Name = "label4";
-            label4.Size = new Size(92, 19);
+            label4.Size = new Size(115, 23);
             label4.TabIndex = 11;
             label4.Text = "Debit Card";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -398,41 +390,42 @@
             // 
             CliqqPanel.Controls.Add(label3);
             CliqqPanel.CustomizableEdges = customizableEdges21;
-            CliqqPanel.Location = new Point(203, 199);
-            CliqqPanel.Margin = new Padding(3, 2, 3, 2);
+            CliqqPanel.Location = new Point(232, 265);
             CliqqPanel.Name = "CliqqPanel";
             CliqqPanel.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            CliqqPanel.Size = new Size(377, 45);
+            CliqqPanel.Size = new Size(431, 60);
             CliqqPanel.TabIndex = 41;
+            CliqqPanel.MouseClick += CliqqPanel_MouseClick;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 9F);
-            label3.Location = new Point(8, 8);
+            label3.Location = new Point(9, 11);
             label3.Name = "label3";
-            label3.Size = new Size(330, 34);
+            label3.Size = new Size(412, 40);
             label3.TabIndex = 0;
             label3.Text = "Payment should be done within 1 hour upon checkout. \r\nAccessible daily Mon-Sun with additional P10 fee.";
+            label3.MouseClick += label3_MouseClick;
             // 
             // mayapanel
             // 
             mayapanel.Controls.Add(label2);
             mayapanel.CustomizableEdges = customizableEdges23;
-            mayapanel.Location = new Point(672, 133);
-            mayapanel.Margin = new Padding(3, 2, 3, 2);
+            mayapanel.Location = new Point(768, 177);
             mayapanel.Name = "mayapanel";
             mayapanel.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            mayapanel.Size = new Size(337, 45);
+            mayapanel.Size = new Size(385, 60);
             mayapanel.TabIndex = 40;
+            mayapanel.MouseClick += mayapanel_MouseClick;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 9F);
-            label2.Location = new Point(8, 8);
+            label2.Location = new Point(9, 11);
             label2.Name = "label2";
-            label2.Size = new Size(280, 34);
+            label2.Size = new Size(343, 40);
             label2.TabIndex = 0;
             label2.Text = "Payment should be completed within 30 mins. \r\nAccessible 24/7.";
             // 
@@ -443,12 +436,11 @@
             guna2ImageButton3.Image = (Image)resources.GetObject("guna2ImageButton3.Image");
             guna2ImageButton3.ImageOffset = new Point(0, 0);
             guna2ImageButton3.ImageRotate = 0F;
-            guna2ImageButton3.Location = new Point(128, 199);
-            guna2ImageButton3.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton3.Location = new Point(146, 265);
             guna2ImageButton3.Name = "guna2ImageButton3";
             guna2ImageButton3.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton3.ShadowDecoration.CustomizableEdges = customizableEdges25;
-            guna2ImageButton3.Size = new Size(70, 51);
+            guna2ImageButton3.Size = new Size(80, 68);
             guna2ImageButton3.TabIndex = 45;
             // 
             // guna2ImageButton2
@@ -458,12 +450,11 @@
             guna2ImageButton2.Image = (Image)resources.GetObject("guna2ImageButton2.Image");
             guna2ImageButton2.ImageOffset = new Point(0, 0);
             guna2ImageButton2.ImageRotate = 0F;
-            guna2ImageButton2.Location = new Point(604, 133);
-            guna2ImageButton2.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton2.Location = new Point(690, 177);
             guna2ImageButton2.Name = "guna2ImageButton2";
             guna2ImageButton2.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2ImageButton2.Size = new Size(63, 45);
+            guna2ImageButton2.Size = new Size(72, 60);
             guna2ImageButton2.TabIndex = 44;
             // 
             // guna2ImageButton1
@@ -473,25 +464,24 @@
             guna2ImageButton1.Image = (Image)resources.GetObject("guna2ImageButton1.Image");
             guna2ImageButton1.ImageOffset = new Point(0, 0);
             guna2ImageButton1.ImageRotate = 0F;
-            guna2ImageButton1.Location = new Point(135, 133);
-            guna2ImageButton1.Margin = new Padding(3, 2, 3, 2);
+            guna2ImageButton1.Location = new Point(154, 177);
             guna2ImageButton1.Name = "guna2ImageButton1";
             guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges27;
-            guna2ImageButton1.Size = new Size(61, 45);
+            guna2ImageButton1.Size = new Size(70, 60);
             guna2ImageButton1.TabIndex = 43;
             // 
             // GcashPanel
             // 
             GcashPanel.Controls.Add(label1);
             GcashPanel.CustomizableEdges = customizableEdges28;
-            GcashPanel.Location = new Point(201, 133);
-            GcashPanel.Margin = new Padding(3, 2, 3, 2);
+            GcashPanel.Location = new Point(230, 177);
             GcashPanel.Name = "GcashPanel";
             GcashPanel.ShadowDecoration.CustomizableEdges = customizableEdges29;
-            GcashPanel.Size = new Size(379, 45);
+            GcashPanel.Size = new Size(433, 60);
             GcashPanel.TabIndex = 39;
             GcashPanel.Click += RunGcashPayment;
+            GcashPanel.MouseClick += GcashPanel_MouseClick;
             GcashPanel.MouseEnter += Panel_MouseEnter;
             GcashPanel.MouseLeave += Panel_MouseLeave;
             // 
@@ -499,22 +489,22 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 9F);
-            label1.Location = new Point(8, 8);
+            label1.Location = new Point(9, 11);
             label1.Name = "label1";
-            label1.Size = new Size(280, 34);
+            label1.Size = new Size(343, 40);
             label1.TabIndex = 0;
             label1.Text = "Payment should be completed within 30 mins. \r\nAccessible 24/7 and may entail 2% fee.\r\n";
+            label1.Click += label1_Click;
             // 
             // SRNavback
             // 
             SRNavback.CustomizableEdges = customizableEdges30;
             SRNavback.Image = (Image)resources.GetObject("SRNavback.Image");
             SRNavback.ImageRotate = 0F;
-            SRNavback.Location = new Point(52, 34);
-            SRNavback.Margin = new Padding(3, 2, 3, 2);
+            SRNavback.Location = new Point(59, 45);
             SRNavback.Name = "SRNavback";
             SRNavback.ShadowDecoration.CustomizableEdges = customizableEdges31;
-            SRNavback.Size = new Size(43, 32);
+            SRNavback.Size = new Size(49, 43);
             SRNavback.TabIndex = 33;
             SRNavback.TabStop = false;
             // 
@@ -524,11 +514,10 @@
             guna2Panel4.Controls.Add(SRLabel);
             guna2Panel4.CustomizableEdges = customizableEdges32;
             guna2Panel4.FillColor = Color.FromArgb(13, 22, 29);
-            guna2Panel4.Location = new Point(123, 56);
-            guna2Panel4.Margin = new Padding(3, 2, 3, 2);
+            guna2Panel4.Location = new Point(141, 75);
             guna2Panel4.Name = "guna2Panel4";
             guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges33;
-            guna2Panel4.Size = new Size(911, 48);
+            guna2Panel4.Size = new Size(1041, 64);
             guna2Panel4.TabIndex = 26;
             // 
             // SRLabel
@@ -536,24 +525,23 @@
             SRLabel.AutoSize = true;
             SRLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SRLabel.ForeColor = Color.White;
-            SRLabel.Location = new Point(20, 15);
+            SRLabel.Location = new Point(23, 20);
             SRLabel.Name = "SRLabel";
-            SRLabel.Size = new Size(155, 19);
+            SRLabel.Size = new Size(196, 23);
             SRLabel.TabIndex = 11;
             SRLabel.Text = "E - wallet Payment ";
             SRLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // E_wallet
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1260, 675);
+            ClientSize = new Size(1440, 900);
             Controls.Add(guna2Panel2);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "E_wallet";
             Text = "E_wallet";
             guna2Panel2.ResumeLayout(false);

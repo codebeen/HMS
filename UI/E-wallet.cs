@@ -357,5 +357,207 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             bookingSummaryForm.Show();
             this.Hide();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void GcashPanel_MouseClick(object sender, MouseEventArgs e)
+        {
+                try
+                {
+                    var paymongoClient = new PayMongoClient();
+
+                    // Step 1: Create Payment Link
+                    var checkoutUrl = await paymongoClient.CreateGCashPaymentLink(15000m, "Payment thru GCash");
+
+                    if (checkoutUrl != null)
+                    {
+                        Console.WriteLine("Checkout URL: " + checkoutUrl);
+
+                        // Step 2: Open Checkout URL in Browser
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = checkoutUrl,
+                            UseShellExecute = true
+                        });
+
+                        // Extract linkId from the checkoutUrl
+                        var uri = new Uri(checkoutUrl);
+                        var linkId = uri.Segments[^1].TrimEnd('/');
+
+                        // Step 3: Wait for Payment Status
+                        var status = await paymongoClient.WaitForPaymentStatus(linkId);
+
+                        // Check payment status and display appropriate prompt
+                        if (status == "paid")
+                        {
+                            using (var context = new DataContext())
+                            {
+                                // get the room price of the selected roomId
+                                var roomPrice = context.Rooms.Where(r => r.RoomId == selectedRoomId).Select(r => r.RoomPrice).FirstOrDefault();
+
+                                double vat = roomPrice * 0.12;
+                                double localTax = roomPrice * 0.03;
+                                double serviceCharge = roomPrice * 0.10;
+
+                                double totalAmount = roomPrice + vat + localTax + serviceCharge;
+
+                                Payment payment = new Payment();
+
+                                payment.PaymentId = newBooking.BookingId;
+                                payment.PaymentMethod = "E-Wallet Payment";
+                                payment.Amount = totalAmount;
+                                payment.Currency = "PHP";
+                                payment.Status = "Completed";
+                                payment.PaymentDate = DateTime.Now;
+
+                                payment.PayMongoTransactionId = linkId;
+                                payment.PayMongoPaymentIntentId = "N/A";
+                                payment.PayMongoPaymentMethodId = "N/A";
+
+                                RedirectToBookingSummary(payment);
+                            }
+                        }
+                        else if (status == "failed")
+                        {
+                            MessageBox.Show("Payment Status: Failed");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Payment Status: Unknown. Please check again.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to create payment link.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Error handling for payment link creation
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+        private void label3_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private async void mayapanel_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                var paymongoClient = new PayMongoClient();
+
+                // Step 1: Create Payment Link
+                var checkoutUrl = await paymongoClient.CreatePayMayaPaymentLink(15000m, "Payment thru PayMaya");
+
+                if (checkoutUrl != null)
+                {
+                    Console.WriteLine("Checkout URL: " + checkoutUrl);
+
+                    // Step 2: Open Checkout URL in Browser
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = checkoutUrl,
+                        UseShellExecute = true
+                    });
+
+                    // Extract linkId from the checkoutUrl
+                    var uri = new Uri(checkoutUrl);
+                    var linkId = uri.Segments[^1].TrimEnd('/');
+
+                    // Step 3: Wait for Payment Status
+                    var status = await paymongoClient.WaitForPaymentStatus(linkId);
+
+                    // Check payment status and display appropriate prompt
+                    if (status == "paid")
+                    {
+                        using (var context = new DataContext())
+                        {
+                            // get the room price of the selected roomId
+                            var roomPrice = context.Rooms.Where(r => r.RoomId == selectedRoomId).Select(r => r.RoomPrice).FirstOrDefault();
+
+                            double vat = roomPrice * 0.12;
+                            double localTax = roomPrice * 0.03;
+                            double serviceCharge = roomPrice * 0.10;
+
+                            double totalAmount = roomPrice + vat + localTax + serviceCharge;
+
+                            Payment payment = new Payment();
+
+                            payment.PaymentId = newBooking.BookingId;
+                            payment.PaymentMethod = "E-Wallet Payment";
+                            payment.Amount = totalAmount;
+                            payment.Currency = "PHP";
+                            payment.Status = "Completed";
+                            payment.PaymentDate = DateTime.Now;
+
+                            payment.PayMongoTransactionId = linkId;
+                            payment.PayMongoPaymentIntentId = "N/A";
+                            payment.PayMongoPaymentMethodId = "N/A";
+
+                            RedirectToBookingSummary(payment);
+                        }
+                    }
+                    else if (status == "failed")
+                    {
+                        MessageBox.Show("Payment Status: Failed");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Payment Status: Unknown. Please check again.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to create payment link.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Error handling for payment link creation
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void CliqqPanel_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void bpipanel_MouseClick(object sender, MouseEventArgs e)
+        {
+            RedirectCardPayment("bpi");
+        }
+
+        private void bdopanel_MouseClick(object sender, MouseEventArgs e)
+        {
+            RedirectCardPayment("bdo");
+        }
+
+        private void eastwestpanel_MouseClick(object sender, MouseEventArgs e)
+        {
+            RedirectCardPayment("eastwest");
+        }
+
+        private void rcbcpanel_MouseClick(object sender, MouseEventArgs e)
+        {
+            RedirectCardPayment("rcbc");
+        }
+    
+
+        private void unionbankpanel_MouseClick(object sender, MouseEventArgs e)
+        {
+            RedirectCardPayment("ubp");
+        }
+
+        private void landbankpanel_MouseClick(object sender, MouseEventArgs e)
+        {
+            RedirectCardPayment("landbank");
+        }
     }
 }

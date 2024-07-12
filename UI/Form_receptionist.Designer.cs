@@ -28,24 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Header_recep = new Panel();
             philtext = new Label();
             QCTEXT = new Label();
             locationpic = new PictureBox();
             logoheader_recep = new PictureBox();
             panel_navigation_transparent_recep = new Panel();
-            Transaction_button_recep = new Guna.UI2.WinForms.Guna2Button();
             profilegroup = new Guna.UI2.WinForms.Guna2GroupBox();
             labelnameprofile = new Label();
             labeljobposition = new Label();
@@ -121,7 +118,6 @@
             // panel_navigation_transparent_recep
             // 
             panel_navigation_transparent_recep.BackColor = Color.Black;
-            panel_navigation_transparent_recep.Controls.Add(Transaction_button_recep);
             panel_navigation_transparent_recep.Controls.Add(profilegroup);
             panel_navigation_transparent_recep.Controls.Add(Guest_button_recep);
             panel_navigation_transparent_recep.Controls.Add(Reservation_button_recep);
@@ -132,30 +128,6 @@
             panel_navigation_transparent_recep.Size = new Size(1440, 80);
             panel_navigation_transparent_recep.TabIndex = 1;
             panel_navigation_transparent_recep.Paint += panel_navigation_transparent_recep_Paint;
-            // 
-            // Transaction_button_recep
-            // 
-            Transaction_button_recep.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            Transaction_button_recep.CheckedState.CustomBorderColor = Color.FromArgb(119, 85, 50);
-            Transaction_button_recep.CheckedState.FillColor = Color.FromArgb(100, 223, 182, 89);
-            Transaction_button_recep.CustomBorderThickness = new Padding(0, 5, 0, 0);
-            Transaction_button_recep.CustomizableEdges = customizableEdges1;
-            Transaction_button_recep.DisabledState.BorderColor = Color.Yellow;
-            Transaction_button_recep.DisabledState.CustomBorderColor = Color.Lime;
-            Transaction_button_recep.DisabledState.FillColor = Color.Cyan;
-            Transaction_button_recep.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Transaction_button_recep.FillColor = Color.Transparent;
-            Transaction_button_recep.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Transaction_button_recep.ForeColor = Color.White;
-            Transaction_button_recep.HoverState.CustomBorderColor = Color.Gray;
-            Transaction_button_recep.HoverState.FillColor = Color.FromArgb(115, 115, 115, 90);
-            Transaction_button_recep.Location = new Point(600, 0);
-            Transaction_button_recep.Name = "Transaction_button_recep";
-            Transaction_button_recep.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Transaction_button_recep.Size = new Size(200, 77);
-            Transaction_button_recep.TabIndex = 3;
-            Transaction_button_recep.Text = "TRANSACTIONS";
-            Transaction_button_recep.Click += Transaction_button_recep_Click;
             // 
             // profilegroup
             // 
@@ -169,14 +141,14 @@
             profilegroup.Controls.Add(labelname);
             profilegroup.CustomBorderColor = SystemColors.ControlLight;
             profilegroup.CustomBorderThickness = new Padding(4);
-            profilegroup.CustomizableEdges = customizableEdges4;
+            profilegroup.CustomizableEdges = customizableEdges2;
             profilegroup.Dock = DockStyle.Right;
             profilegroup.FillColor = Color.Transparent;
             profilegroup.Font = new Font("Segoe UI", 9F);
             profilegroup.ForeColor = Color.FromArgb(125, 137, 149);
             profilegroup.Location = new Point(1178, 0);
             profilegroup.Name = "profilegroup";
-            profilegroup.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            profilegroup.ShadowDecoration.CustomizableEdges = customizableEdges3;
             profilegroup.Size = new Size(262, 80);
             profilegroup.TabIndex = 18;
             profilegroup.Click += profilegroup_Click;
@@ -212,7 +184,7 @@
             circilephotoprofile.ImageRotate = 0F;
             circilephotoprofile.Location = new Point(8, 8);
             circilephotoprofile.Name = "circilephotoprofile";
-            circilephotoprofile.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            circilephotoprofile.ShadowDecoration.CustomizableEdges = customizableEdges1;
             circilephotoprofile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             circilephotoprofile.Size = new Size(63, 59);
             circilephotoprofile.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -238,7 +210,7 @@
             Guest_button_recep.CheckedState.CustomBorderColor = Color.FromArgb(119, 85, 50);
             Guest_button_recep.CheckedState.FillColor = Color.FromArgb(100, 223, 182, 89);
             Guest_button_recep.CustomBorderThickness = new Padding(0, 5, 0, 0);
-            Guest_button_recep.CustomizableEdges = customizableEdges6;
+            Guest_button_recep.CustomizableEdges = customizableEdges4;
             Guest_button_recep.DisabledState.BorderColor = Color.Yellow;
             Guest_button_recep.DisabledState.CustomBorderColor = Color.Lime;
             Guest_button_recep.DisabledState.FillColor = Color.Cyan;
@@ -250,7 +222,7 @@
             Guest_button_recep.HoverState.FillColor = Color.FromArgb(115, 115, 115, 90);
             Guest_button_recep.Location = new Point(200, 0);
             Guest_button_recep.Name = "Guest_button_recep";
-            Guest_button_recep.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            Guest_button_recep.ShadowDecoration.CustomizableEdges = customizableEdges5;
             Guest_button_recep.Size = new Size(200, 77);
             Guest_button_recep.TabIndex = 5;
             Guest_button_recep.Text = "STAY NOW";
@@ -262,7 +234,7 @@
             Reservation_button_recep.CheckedState.CustomBorderColor = Color.FromArgb(119, 85, 50);
             Reservation_button_recep.CheckedState.FillColor = Color.FromArgb(100, 223, 182, 89);
             Reservation_button_recep.CustomBorderThickness = new Padding(0, 5, 0, 0);
-            Reservation_button_recep.CustomizableEdges = customizableEdges8;
+            Reservation_button_recep.CustomizableEdges = customizableEdges6;
             Reservation_button_recep.DisabledState.BorderColor = Color.Yellow;
             Reservation_button_recep.DisabledState.CustomBorderColor = Color.Lime;
             Reservation_button_recep.DisabledState.FillColor = Color.Cyan;
@@ -274,7 +246,7 @@
             Reservation_button_recep.HoverState.FillColor = Color.FromArgb(115, 115, 115, 90);
             Reservation_button_recep.Location = new Point(400, 3);
             Reservation_button_recep.Name = "Reservation_button_recep";
-            Reservation_button_recep.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            Reservation_button_recep.ShadowDecoration.CustomizableEdges = customizableEdges7;
             Reservation_button_recep.Size = new Size(200, 77);
             Reservation_button_recep.TabIndex = 5;
             Reservation_button_recep.Text = "RESERVATIONS";
@@ -287,7 +259,7 @@
             Booknow_button_recep.CheckedState.CustomBorderColor = Color.FromArgb(119, 85, 50);
             Booknow_button_recep.CheckedState.FillColor = Color.FromArgb(100, 223, 182, 89);
             Booknow_button_recep.CustomBorderThickness = new Padding(0, 5, 0, 0);
-            Booknow_button_recep.CustomizableEdges = customizableEdges10;
+            Booknow_button_recep.CustomizableEdges = customizableEdges8;
             Booknow_button_recep.DisabledState.BorderColor = Color.Yellow;
             Booknow_button_recep.DisabledState.CustomBorderColor = Color.Lime;
             Booknow_button_recep.DisabledState.FillColor = Color.Cyan;
@@ -299,7 +271,7 @@
             Booknow_button_recep.HoverState.FillColor = Color.FromArgb(115, 115, 115, 90);
             Booknow_button_recep.Location = new Point(0, 3);
             Booknow_button_recep.Name = "Booknow_button_recep";
-            Booknow_button_recep.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            Booknow_button_recep.ShadowDecoration.CustomizableEdges = customizableEdges9;
             Booknow_button_recep.Size = new Size(200, 77);
             Booknow_button_recep.TabIndex = 4;
             Booknow_button_recep.Text = "BOOK NOW";
@@ -351,7 +323,6 @@
         private Guna.UI2.WinForms.Guna2Button Guest_button_recep;
         private Guna.UI2.WinForms.Guna2Button Reservation_button_recep;
         private Guna.UI2.WinForms.Guna2Button Booknow_button_recep;
-        private Guna.UI2.WinForms.Guna2Button Transaction_button_recep;
         private Guna.UI2.WinForms.Guna2GroupBox profilegroup;
         private Label labeljobposition;
         private Guna.UI2.WinForms.Guna2CirclePictureBox circilephotoprofile;

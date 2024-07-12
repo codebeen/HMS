@@ -223,9 +223,16 @@
             Newbookingspanel.FillColor4 = Color.FromArgb(16, 19, 20);
             Newbookingspanel.Location = new Point(228, 28);
             Newbookingspanel.Name = "Newbookingspanel";
+<<<<<<< HEAD
             Newbookingspanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Newbookingspanel.Size = new Size(300, 110);
             Newbookingspanel.TabIndex = 2;
+=======
+            Newbookingspanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Newbookingspanel.Size = new Size(268, 82);
+            Newbookingspanel.TabIndex = 1;
+            Newbookingspanel.Paint += Newbookingspanel_Paint;
+>>>>>>> Add receptionist
             // 
             // labellnum
             // 
@@ -299,7 +306,86 @@
             Revenuebutton.Text = "Revenue";
             Revenuebutton.Click += Revenuebutton_Click;
             // 
+<<<<<<< HEAD
             // Ocupancyratebutton
+=======
+            // panelreportsummary
+            // 
+            panelreportsummary.Location = new Point(119, 221);
+            panelreportsummary.Name = "panelreportsummary";
+            panelreportsummary.Size = new Size(1211, 434);
+            panelreportsummary.TabIndex = 8;
+            // 
+            // transactionpaneldash
+            // 
+            transactionpaneldash.BackColor = Color.Transparent;
+            transactionpaneldash.BorderRadius = 20;
+            transactionpaneldash.Controls.Add(label1);
+            transactionpaneldash.Controls.Add(transactionpanel);
+            transactionpaneldash.Controls.Add(pictureBox1);
+            transactionpaneldash.CustomizableEdges = customizableEdges9;
+            transactionpaneldash.FillColor = Color.FromArgb(13, 29, 20);
+            transactionpaneldash.FillColor2 = Color.FromArgb(13, 29, 20);
+            transactionpaneldash.FillColor3 = Color.FromArgb(16, 19, 20);
+            transactionpaneldash.FillColor4 = Color.FromArgb(16, 19, 20);
+            transactionpaneldash.Location = new Point(586, 32);
+            transactionpaneldash.Name = "transactionpaneldash";
+            transactionpaneldash.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            transactionpaneldash.Size = new Size(268, 82);
+            transactionpaneldash.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Transparent;
+            label1.Location = new Point(201, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 40);
+            label1.TabIndex = 9;
+            label1.Text = "30";
+            // 
+            // transactionpanel
+            // 
+            transactionpanel.AutoSize = true;
+            transactionpanel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            transactionpanel.ForeColor = Color.White;
+            transactionpanel.Location = new Point(77, 25);
+            transactionpanel.Name = "transactionpanel";
+            transactionpanel.Size = new Size(128, 23);
+            transactionpanel.TabIndex = 9;
+            transactionpanel.Text = "Transactions";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(9, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(73, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // Staynowpanel
+            // 
+            Staynowpanel.BackColor = Color.Transparent;
+            Staynowpanel.BorderRadius = 20;
+            Staynowpanel.Controls.Add(label3);
+            Staynowpanel.Controls.Add(label4);
+            Staynowpanel.Controls.Add(pictureBox2);
+            Staynowpanel.CustomizableEdges = customizableEdges11;
+            Staynowpanel.FillColor = Color.FromArgb(13, 29, 20);
+            Staynowpanel.FillColor2 = Color.FromArgb(13, 29, 20);
+            Staynowpanel.FillColor3 = Color.FromArgb(16, 19, 20);
+            Staynowpanel.FillColor4 = Color.FromArgb(16, 19, 20);
+            Staynowpanel.Location = new Point(954, 32);
+            Staynowpanel.Name = "Staynowpanel";
+            Staynowpanel.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            Staynowpanel.Size = new Size(268, 82);
+            Staynowpanel.TabIndex = 10;
+            // 
+            // label3
+>>>>>>> Add receptionist
             // 
             Ocupancyratebutton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             Ocupancyratebutton.BackColor = Color.Transparent;

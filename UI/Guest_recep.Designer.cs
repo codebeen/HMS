@@ -29,66 +29,43 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
-            PanelforGuest = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             ModifyButton = new Guna.UI2.WinForms.Guna2Button();
+            guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            PanelforGuest = new Guna.UI2.WinForms.Guna2Panel();
             InfoTableGuest = new Guna.UI2.WinForms.Guna2DataGridView();
             GuestInfo = new DataGridViewTextBoxColumn();
             checkindate = new DataGridViewTextBoxColumn();
             CheckinTime = new DataGridViewTextBoxColumn();
             CheckoutTime = new DataGridViewTextBoxColumn();
             ModifyGuest = new DataGridViewTextBoxColumn();
-            guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             PanelforGuest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)InfoTableGuest).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(77, 38);
+            label1.Location = new Point(534, 44);
             label1.Name = "label1";
             label1.Size = new Size(373, 49);
             label1.TabIndex = 0;
             label1.Text = "Guest Information";
             // 
-            // PanelforGuest
-            // 
-            PanelforGuest.BackColor = Color.White;
-            PanelforGuest.Controls.Add(guna2Panel1);
-            PanelforGuest.Controls.Add(InfoTableGuest);
-            PanelforGuest.CustomizableEdges = customizableEdges3;
-            PanelforGuest.Location = new Point(99, 106);
-            PanelforGuest.Name = "PanelforGuest";
-            PanelforGuest.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            PanelforGuest.Size = new Size(1276, 505);
-            PanelforGuest.TabIndex = 1;
-            // 
-            // guna2Panel1
-            // 
-            guna2Panel1.BackColor = Color.FromArgb(13, 22, 29);
-            guna2Panel1.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Location = new Point(1071, 0);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(208, 50);
-            guna2Panel1.TabIndex = 3;
-            // 
             // ModifyButton
             // 
+            ModifyButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ModifyButton.BorderRadius = 10;
-            ModifyButton.CustomizableEdges = customizableEdges5;
+            ModifyButton.CustomizableEdges = customizableEdges1;
             ModifyButton.DisabledState.BorderColor = Color.DarkGray;
             ModifyButton.DisabledState.CustomBorderColor = Color.DarkGray;
             ModifyButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -96,13 +73,30 @@
             ModifyButton.FillColor = Color.FromArgb(214, 164, 38);
             ModifyButton.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ModifyButton.ForeColor = Color.White;
-            ModifyButton.Location = new Point(1224, 617);
+            ModifyButton.Location = new Point(1124, 621);
             ModifyButton.Name = "ModifyButton";
-            ModifyButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            ModifyButton.Size = new Size(133, 45);
+            ModifyButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            ModifyButton.Size = new Size(125, 40);
             ModifyButton.TabIndex = 2;
-            ModifyButton.Text = "Extend stay";
+            ModifyButton.Text = "Extend Stay";
             ModifyButton.Click += ModifyButton_Click;
+            // 
+            // guna2Elipse1
+            // 
+            guna2Elipse1.BorderRadius = 10;
+            guna2Elipse1.TargetControl = PanelforGuest;
+            // 
+            // PanelforGuest
+            // 
+            PanelforGuest.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PanelforGuest.BackColor = Color.White;
+            PanelforGuest.Controls.Add(InfoTableGuest);
+            PanelforGuest.CustomizableEdges = customizableEdges3;
+            PanelforGuest.Location = new Point(184, 106);
+            PanelforGuest.Name = "PanelforGuest";
+            PanelforGuest.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            PanelforGuest.Size = new Size(1073, 505);
+            PanelforGuest.TabIndex = 1;
             // 
             // InfoTableGuest
             // 
@@ -129,13 +123,14 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             InfoTableGuest.DefaultCellStyle = dataGridViewCellStyle3;
+            InfoTableGuest.Dock = DockStyle.Fill;
             InfoTableGuest.Enabled = false;
             InfoTableGuest.GridColor = Color.Silver;
             InfoTableGuest.Location = new Point(0, 0);
             InfoTableGuest.Name = "InfoTableGuest";
             InfoTableGuest.RowHeadersVisible = false;
             InfoTableGuest.RowHeadersWidth = 51;
-            InfoTableGuest.Size = new Size(1074, 520);
+            InfoTableGuest.Size = new Size(1073, 505);
             InfoTableGuest.TabIndex = 0;
             InfoTableGuest.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             InfoTableGuest.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -189,11 +184,6 @@
             ModifyGuest.MinimumWidth = 6;
             ModifyGuest.Name = "ModifyGuest";
             // 
-            // guna2Elipse1
-            // 
-            guna2Elipse1.BorderRadius = 10;
-            guna2Elipse1.TargetControl = PanelforGuest;
-            // 
             // Guest_recep
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -212,15 +202,14 @@
         #endregion
 
         private Label label1;
-        private Guna.UI2.WinForms.Guna2Panel PanelforGuest;
-        private Guna.UI2.WinForms.Guna2DataGridView InfoTableGuest;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button ModifyButton;
+        private Guna.UI2.WinForms.Guna2Panel PanelforGuest;
+        private Guna.UI2.WinForms.Guna2DataGridView InfoTableGuest;
         private DataGridViewTextBoxColumn GuestInfo;
         private DataGridViewTextBoxColumn checkindate;
         private DataGridViewTextBoxColumn CheckinTime;
         private DataGridViewTextBoxColumn CheckoutTime;
         private DataGridViewTextBoxColumn ModifyGuest;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }
