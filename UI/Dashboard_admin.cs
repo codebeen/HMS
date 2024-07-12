@@ -31,23 +31,6 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             userControl.BringToFront();
         }
 
-        private void Guestbutton_Click(object sender, EventArgs e)
-        {
-            Guestdemographics_db uc = new Guestdemographics_db();
-            addUserControl(uc);
-        }
-
-        private void Ocupancyratebutton_Click(object sender, EventArgs e)
-        {
-            OccupancyRate_db uc = new OccupancyRate_db();
-            addUserControl(uc);
-        }
-
-        private void Revenuebutton_Click(object sender, EventArgs e)
-        {
-            Revenue_db uc = new Revenue_db();
-            addUserControl(uc);
-        }
 
         private void InitializeHoverEffects()
         {
@@ -78,6 +61,29 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             panel.FillColor2 = Color.FromArgb(13, 29, 20);
             panel.FillColor3 = Color.FromArgb(16, 19, 20);
             panel.FillColor4 = Color.FromArgb(16, 19, 20);
+        }
+
+        private void Dashboard_admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Guestbutton_Click_1(object sender, EventArgs e)
+        {
+            Guestdemographics_db uc = new Guestdemographics_db();
+            addUserControl(uc);
+        }
+
+        private void Ocupancyratebutton_Click(object sender, EventArgs e)
+        {
+            OccupancyRate_db uc = new OccupancyRate_db();
+            addUserControl(uc);
+        }
+
+        private void Revenuebutton_Click(object sender, EventArgs e)
+        {
+            Revenue_db uc = new Revenue_db();
+            addUserControl(uc);
         }
     }
 }

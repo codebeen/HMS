@@ -48,6 +48,7 @@
             logoheader_admin = new PictureBox();
             profilegroup = new Guna.UI2.WinForms.Guna2GroupBox();
             labelnameprofile = new Label();
+            labeljobposition = new Label();
             circilephotoprofile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             labelname = new Label();
             Naviationpanelinform_admin = new Panel();
@@ -56,7 +57,6 @@
             Rooms_Button = new Guna.UI2.WinForms.Guna2Button();
             Dashboard_button = new Guna.UI2.WinForms.Guna2Button();
             panelforusercontroladmin = new Panel();
-            labeljobposition = new Label();
             Headerpanelforformadmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)locationpic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)logoheader_admin).BeginInit();
@@ -124,6 +124,7 @@
             // 
             // profilegroup
             // 
+            profilegroup.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             profilegroup.BackColor = Color.Transparent;
             profilegroup.BorderColor = Color.White;
             profilegroup.BorderRadius = 20;
@@ -138,7 +139,7 @@
             profilegroup.FillColor = Color.Transparent;
             profilegroup.Font = new Font("Segoe UI", 9F);
             profilegroup.ForeColor = Color.FromArgb(125, 137, 149);
-            profilegroup.Location = new Point(1156, 9);
+            profilegroup.Location = new Point(1156, 7);
             profilegroup.Name = "profilegroup";
             profilegroup.ShadowDecoration.CustomizableEdges = customizableEdges5;
             profilegroup.Size = new Size(272, 68);
@@ -157,6 +158,18 @@
             labelnameprofile.TabIndex = 15;
             labelnameprofile.Text = "Miyuki Mharie Parocha ";
             labelnameprofile.Click += label1_Click;
+            // 
+            // labeljobposition
+            // 
+            labeljobposition.AutoSize = true;
+            labeljobposition.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labeljobposition.ForeColor = Color.White;
+            labeljobposition.Location = new Point(87, 34);
+            labeljobposition.Name = "labeljobposition";
+            labeljobposition.Size = new Size(175, 17);
+            labeljobposition.TabIndex = 1;
+            labeljobposition.Text = "miyukimharie@gmail.com";
+            labeljobposition.Click += labelemail_Click;
             // 
             // circilephotoprofile
             // 
@@ -215,7 +228,7 @@
             Reports_Button.ForeColor = Color.White;
             Reports_Button.HoverState.CustomBorderColor = Color.Gray;
             Reports_Button.HoverState.FillColor = Color.FromArgb(115, 115, 115, 90);
-            Reports_Button.Location = new Point(600, 3);
+            Reports_Button.Location = new Point(400, 2);
             Reports_Button.Name = "Reports_Button";
             Reports_Button.ShadowDecoration.CustomizableEdges = customizableEdges7;
             Reports_Button.Size = new Size(200, 77);
@@ -239,12 +252,12 @@
             Transactions_Button.ForeColor = Color.White;
             Transactions_Button.HoverState.CustomBorderColor = Color.Gray;
             Transactions_Button.HoverState.FillColor = Color.FromArgb(115, 115, 115, 90);
-            Transactions_Button.Location = new Point(400, 3);
+            Transactions_Button.Location = new Point(600, 2);
             Transactions_Button.Name = "Transactions_Button";
             Transactions_Button.ShadowDecoration.CustomizableEdges = customizableEdges9;
             Transactions_Button.Size = new Size(200, 77);
             Transactions_Button.TabIndex = 3;
-            Transactions_Button.Text = "TRANSACTIONS";
+            Transactions_Button.Text = "LOG RECORDS";
             Transactions_Button.Click += Transactions_Button_Click;
             // 
             // Rooms_Button
@@ -263,7 +276,7 @@
             Rooms_Button.ForeColor = Color.White;
             Rooms_Button.HoverState.CustomBorderColor = Color.Gray;
             Rooms_Button.HoverState.FillColor = Color.FromArgb(115, 115, 115, 90);
-            Rooms_Button.Location = new Point(200, 3);
+            Rooms_Button.Location = new Point(200, 2);
             Rooms_Button.Name = "Rooms_Button";
             Rooms_Button.ShadowDecoration.CustomizableEdges = customizableEdges11;
             Rooms_Button.Size = new Size(200, 77);
@@ -288,7 +301,7 @@
             Dashboard_button.ForeColor = Color.White;
             Dashboard_button.HoverState.CustomBorderColor = Color.Gray;
             Dashboard_button.HoverState.FillColor = Color.FromArgb(115, 115, 115, 90);
-            Dashboard_button.Location = new Point(0, 3);
+            Dashboard_button.Location = new Point(0, 2);
             Dashboard_button.Name = "Dashboard_button";
             Dashboard_button.ShadowDecoration.CustomizableEdges = customizableEdges13;
             Dashboard_button.Size = new Size(200, 77);
@@ -306,18 +319,6 @@
             panelforusercontroladmin.TabStop = true;
             panelforusercontroladmin.Paint += panelforusercontroladmin_Paint;
             // 
-            // labeljobposition
-            // 
-            labeljobposition.AutoSize = true;
-            labeljobposition.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labeljobposition.ForeColor = Color.White;
-            labeljobposition.Location = new Point(87, 34);
-            labeljobposition.Name = "labeljobposition";
-            labeljobposition.Size = new Size(175, 17);
-            labeljobposition.TabIndex = 1;
-            labeljobposition.Text = "miyukimharie@gmail.com";
-            labeljobposition.Click += labelemail_Click;
-            // 
             // Form_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -328,10 +329,11 @@
             Controls.Add(panelforusercontroladmin);
             Controls.Add(Naviationpanelinform_admin);
             Controls.Add(Headerpanelforformadmin);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form_Admin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form_Admin";
+            Text = "Serenitel";
+            WindowState = FormWindowState.Maximized;
             Headerpanelforformadmin.ResumeLayout(false);
             Headerpanelforformadmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)locationpic).EndInit();

@@ -28,198 +28,217 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transactions));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             HeaderText = new Label();
-            SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            TransactionGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            TransactionNum = new DataGridViewTextBoxColumn();
-            Transaction_Type = new DataGridViewTextBoxColumn();
-            Dates = new DataGridViewTextBoxColumn();
-            Times = new DataGridViewTextBoxColumn();
+            guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
+            transactionid = new DataGridViewTextBoxColumn();
+            transactiontype = new DataGridViewTextBoxColumn();
+            transactiondate = new DataGridViewTextBoxColumn();
+            transactiontime = new DataGridViewTextBoxColumn();
+            createdby = new DataGridViewTextBoxColumn();
+            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)TransactionGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2DataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // DateTimePicker
-            // 
-            DateTimePicker.BorderColor = Color.FromArgb(13, 22, 29);
-            DateTimePicker.BorderRadius = 10;
-            DateTimePicker.Checked = true;
-            DateTimePicker.CustomizableEdges = customizableEdges1;
-            DateTimePicker.FillColor = Color.FromArgb(13, 22, 29);
-            DateTimePicker.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DateTimePicker.ForeColor = Color.White;
-            DateTimePicker.Format = DateTimePickerFormat.Short;
-            DateTimePicker.Location = new Point(89, 43);
-            DateTimePicker.Margin = new Padding(3, 4, 3, 4);
-            DateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateTimePicker.Name = "DateTimePicker";
-            DateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            DateTimePicker.Size = new Size(238, 40);
-            DateTimePicker.TabIndex = 0;
-            DateTimePicker.TextAlign = HorizontalAlignment.Center;
-            DateTimePicker.Value = new DateTime(2024, 6, 15, 8, 24, 55, 570);
             // 
             // HeaderText
             // 
+            HeaderText.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             HeaderText.AutoSize = true;
             HeaderText.Font = new Font("Century Gothic", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            HeaderText.Location = new Point(571, 82);
+            HeaderText.Location = new Point(635, 43);
             HeaderText.Name = "HeaderText";
-            HeaderText.Size = new Size(302, 57);
+            HeaderText.Size = new Size(308, 57);
             HeaderText.TabIndex = 3;
-            HeaderText.Text = "Transactions";
-            // 
-            // SearchTextBox
-            // 
-            SearchTextBox.BorderColor = Color.Black;
-            SearchTextBox.BorderRadius = 15;
-            SearchTextBox.CustomizableEdges = customizableEdges3;
-            SearchTextBox.DefaultText = "";
-            SearchTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            SearchTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            SearchTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            SearchTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            SearchTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            SearchTextBox.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SearchTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            SearchTextBox.IconLeft = (Image)resources.GetObject("SearchTextBox.IconLeft");
-            SearchTextBox.Location = new Point(1007, 43);
-            SearchTextBox.Margin = new Padding(3, 4, 3, 4);
-            SearchTextBox.Name = "SearchTextBox";
-            SearchTextBox.PasswordChar = '\0';
-            SearchTextBox.PlaceholderForeColor = Color.Gray;
-            SearchTextBox.PlaceholderText = "Search by guest, reservation";
-            SearchTextBox.SelectedText = "";
-            SearchTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            SearchTextBox.Size = new Size(339, 52);
-            SearchTextBox.TabIndex = 6;
+            HeaderText.Text = "Log Records";
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(TransactionGridView);
-            guna2Panel1.CustomizableEdges = customizableEdges5;
-            guna2Panel1.Location = new Point(69, 149);
+            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2Panel1.Controls.Add(guna2DataGridView2);
+            guna2Panel1.Controls.Add(guna2DataGridView1);
+            guna2Panel1.CustomizableEdges = customizableEdges3;
+            guna2Panel1.Location = new Point(115, 137);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel1.Size = new Size(1277, 477);
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel1.Size = new Size(1355, 477);
             guna2Panel1.TabIndex = 8;
             // 
-            // TransactionGridView
+            // guna2DataGridView2
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            TransactionGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(13, 22, 29);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(13, 22, 29);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            TransactionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            TransactionGridView.ColumnHeadersHeight = 50;
-            TransactionGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            TransactionGridView.Columns.AddRange(new DataGridViewColumn[] { TransactionNum, Transaction_Type, Dates, Times });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            TransactionGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            TransactionGridView.Dock = DockStyle.Fill;
-            TransactionGridView.GridColor = Color.FromArgb(231, 229, 255);
-            TransactionGridView.Location = new Point(0, 0);
-            TransactionGridView.Name = "TransactionGridView";
-            TransactionGridView.RowHeadersVisible = false;
-            TransactionGridView.RowHeadersWidth = 51;
-            TransactionGridView.Size = new Size(1277, 477);
-            TransactionGridView.TabIndex = 0;
-            TransactionGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            TransactionGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            TransactionGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            TransactionGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            TransactionGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            TransactionGridView.ThemeStyle.BackColor = Color.White;
-            TransactionGridView.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            TransactionGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            TransactionGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            TransactionGridView.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            TransactionGridView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            TransactionGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            TransactionGridView.ThemeStyle.HeaderStyle.Height = 50;
-            TransactionGridView.ThemeStyle.ReadOnly = false;
-            TransactionGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
-            TransactionGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            TransactionGridView.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            TransactionGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            TransactionGridView.ThemeStyle.RowsStyle.Height = 29;
-            TransactionGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            TransactionGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.BackColor = Color.White;
+            guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            guna2DataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(13, 22, 29);
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.Padding = new Padding(2);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.ControlDark;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            guna2DataGridView2.ColumnHeadersHeight = 50;
+            guna2DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            guna2DataGridView2.Columns.AddRange(new DataGridViewColumn[] { transactionid, transactiontype, transactiondate, transactiontime, createdby });
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
+            guna2DataGridView2.GridColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView2.Location = new Point(0, 0);
+            guna2DataGridView2.Margin = new Padding(3, 4, 3, 4);
+            guna2DataGridView2.Name = "guna2DataGridView2";
+            guna2DataGridView2.RowHeadersVisible = false;
+            guna2DataGridView2.RowHeadersWidth = 51;
+            guna2DataGridView2.RowTemplate.Height = 25;
+            guna2DataGridView2.Size = new Size(1355, 477);
+            guna2DataGridView2.TabIndex = 2;
+            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
+            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            guna2DataGridView2.ThemeStyle.BackColor = Color.White;
+            guna2DataGridView2.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView2.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            guna2DataGridView2.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            guna2DataGridView2.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            guna2DataGridView2.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            guna2DataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            guna2DataGridView2.ThemeStyle.HeaderStyle.Height = 50;
+            guna2DataGridView2.ThemeStyle.ReadOnly = false;
+            guna2DataGridView2.ThemeStyle.RowsStyle.BackColor = Color.White;
+            guna2DataGridView2.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            guna2DataGridView2.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            guna2DataGridView2.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView2.ThemeStyle.RowsStyle.Height = 25;
+            guna2DataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView2.CellContentClick += guna2DataGridView2_CellContentClick;
             // 
-            // TransactionNum
+            // transactionid
             // 
-            TransactionNum.HeaderText = "Transaction No.";
-            TransactionNum.MinimumWidth = 6;
-            TransactionNum.Name = "TransactionNum";
+            transactionid.HeaderText = "Log Id";
+            transactionid.MinimumWidth = 6;
+            transactionid.Name = "transactionid";
             // 
-            // Transaction_Type
+            // transactiontype
             // 
-            Transaction_Type.HeaderText = "Transaction Type";
-            Transaction_Type.MinimumWidth = 6;
-            Transaction_Type.Name = "Transaction_Type";
+            transactiontype.HeaderText = "Log Type";
+            transactiontype.MinimumWidth = 6;
+            transactiontype.Name = "transactiontype";
             // 
-            // Dates
+            // transactiondate
             // 
-            Dates.HeaderText = "Date";
-            Dates.MinimumWidth = 6;
-            Dates.Name = "Dates";
+            transactiondate.HeaderText = "Date";
+            transactiondate.MinimumWidth = 6;
+            transactiondate.Name = "transactiondate";
             // 
-            // Times
+            // transactiontime
             // 
-            Times.HeaderText = "Time";
-            Times.MinimumWidth = 6;
-            Times.Name = "Times";
+            transactiontime.HeaderText = "Time";
+            transactiontime.MinimumWidth = 6;
+            transactiontime.Name = "transactiontime";
+            // 
+            // createdby
+            // 
+            createdby.HeaderText = "Employee Name";
+            createdby.MinimumWidth = 6;
+            createdby.Name = "createdby";
+            // 
+            // guna2DataGridView1
+            // 
+            dataGridViewCellStyle10.BackColor = Color.White;
+            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            guna2DataGridView1.ColumnHeadersHeight = 4;
+            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.White;
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
+            guna2DataGridView1.Dock = DockStyle.Fill;
+            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView1.Location = new Point(0, 0);
+            guna2DataGridView1.Margin = new Padding(3, 4, 3, 4);
+            guna2DataGridView1.Name = "guna2DataGridView1";
+            guna2DataGridView1.RowHeadersVisible = false;
+            guna2DataGridView1.RowHeadersWidth = 51;
+            guna2DataGridView1.RowTemplate.Height = 25;
+            guna2DataGridView1.Size = new Size(1355, 477);
+            guna2DataGridView1.TabIndex = 1;
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
+            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
+            guna2DataGridView1.ThemeStyle.ReadOnly = false;
+            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
+            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
+            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // Transactions
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(guna2Panel1);
-            Controls.Add(SearchTextBox);
             Controls.Add(HeaderText);
-            Controls.Add(DateTimePicker);
             Name = "Transactions";
             Size = new Size(1600, 679);
+            Load += Transactions_Load_1;
             guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)TransactionGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2DataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker;
         private Label HeaderText;
-        private Guna.UI2.WinForms.Guna2TextBox SearchTextBox;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2DataGridView TransactionGridView;
-        private DataGridViewTextBoxColumn TransactionNum;
-        private DataGridViewTextBoxColumn Transaction_Type;
-        private DataGridViewTextBoxColumn Dates;
-        private DataGridViewTextBoxColumn Times;
+        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView2;
+        private DataGridViewTextBoxColumn transactionid;
+        private DataGridViewTextBoxColumn transactiontype;
+        private DataGridViewTextBoxColumn transactiondate;
+        private DataGridViewTextBoxColumn transactiontime;
+        private DataGridViewTextBoxColumn createdby;
     }
 }

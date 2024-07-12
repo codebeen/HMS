@@ -37,12 +37,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             roomtypestext = new Label();
             noofroomsindelux = new Label();
             deluxroomtext = new Label();
@@ -51,26 +51,30 @@
             noofroomsinstandard = new Label();
             standardroomtext = new Label();
             Standardroom = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            label1 = new Label();
             standardpic1 = new Guna.UI2.WinForms.Guna2PictureBox();
             standardpic3 = new Guna.UI2.WinForms.Guna2PictureBox();
             panelforbgroomtypes = new Guna.UI2.WinForms.Guna2Panel();
-            Suitesrooms = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            DeluxeRoom = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             standardpic2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            Suitesrooms = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            label2 = new Label();
+            DeluxeRoom = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            label3 = new Label();
             Standardroom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)standardpic1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)standardpic3).BeginInit();
             panelforbgroomtypes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)standardpic2).BeginInit();
             Suitesrooms.SuspendLayout();
             DeluxeRoom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)standardpic2).BeginInit();
             SuspendLayout();
             // 
             // roomtypestext
             // 
+            roomtypestext.Anchor = AnchorStyles.None;
             roomtypestext.AutoSize = true;
             roomtypestext.Font = new Font("Century Gothic", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roomtypestext.Location = new Point(52, 31);
+            roomtypestext.Location = new Point(138, 17);
             roomtypestext.Name = "roomtypestext";
             roomtypestext.Size = new Size(300, 57);
             roomtypestext.TabIndex = 0;
@@ -80,10 +84,10 @@
             // 
             noofroomsindelux.AutoSize = true;
             noofroomsindelux.BackColor = Color.Transparent;
-            noofroomsindelux.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            noofroomsindelux.Location = new Point(42, 68);
+            noofroomsindelux.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            noofroomsindelux.Location = new Point(209, 73);
             noofroomsindelux.Name = "noofroomsindelux";
-            noofroomsindelux.Size = new Size(264, 23);
+            noofroomsindelux.Size = new Size(220, 21);
             noofroomsindelux.TabIndex = 3;
             noofroomsindelux.Text = "label for number of rooms";
             // 
@@ -102,10 +106,10 @@
             // 
             noofroomsinsuites.AutoSize = true;
             noofroomsinsuites.BackColor = Color.Transparent;
-            noofroomsinsuites.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            noofroomsinsuites.Location = new Point(42, 70);
+            noofroomsinsuites.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            noofroomsinsuites.Location = new Point(209, 70);
             noofroomsinsuites.Name = "noofroomsinsuites";
-            noofroomsinsuites.Size = new Size(264, 23);
+            noofroomsinsuites.Size = new Size(220, 21);
             noofroomsinsuites.TabIndex = 3;
             noofroomsinsuites.Text = "label for number of rooms";
             // 
@@ -124,12 +128,13 @@
             // 
             noofroomsinstandard.AutoSize = true;
             noofroomsinstandard.BackColor = Color.Transparent;
-            noofroomsinstandard.Font = new Font("Century Gothic", 12F);
-            noofroomsinstandard.Location = new Point(42, 78);
+            noofroomsinstandard.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            noofroomsinstandard.Location = new Point(209, 84);
             noofroomsinstandard.Name = "noofroomsinstandard";
-            noofroomsinstandard.Size = new Size(264, 23);
+            noofroomsinstandard.Size = new Size(220, 21);
             noofroomsinstandard.TabIndex = 3;
             noofroomsinstandard.Text = "label for number of rooms";
+            noofroomsinstandard.Click += noofroomsinstandard_Click;
             // 
             // standardroomtext
             // 
@@ -144,46 +149,59 @@
             // 
             // Standardroom
             // 
+            Standardroom.BorderColor = Color.Silver;
             Standardroom.BorderRadius = 10;
+            Standardroom.BorderThickness = 1;
+            Standardroom.Controls.Add(label1);
             Standardroom.Controls.Add(standardroomtext);
             Standardroom.Controls.Add(noofroomsinstandard);
             Standardroom.CustomizableEdges = customizableEdges1;
             Standardroom.Location = new Point(285, 27);
             Standardroom.Name = "Standardroom";
             Standardroom.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Standardroom.Size = new Size(883, 144);
+            Standardroom.Size = new Size(1003, 161);
             Standardroom.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(57, 84);
+            label1.Name = "label1";
+            label1.Size = new Size(156, 21);
+            label1.TabIndex = 4;
+            label1.Text = "Number of rooms:";
             // 
             // standardpic1
             // 
-            standardpic1.BorderRadius = 10;
             standardpic1.CustomizableEdges = customizableEdges3;
             standardpic1.Image = (Image)resources.GetObject("standardpic1.Image");
             standardpic1.ImageRotate = 0F;
-            standardpic1.Location = new Point(61, 207);
+            standardpic1.Location = new Point(23, 194);
             standardpic1.Name = "standardpic1";
             standardpic1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            standardpic1.Size = new Size(206, 131);
+            standardpic1.Size = new Size(244, 144);
             standardpic1.SizeMode = PictureBoxSizeMode.StretchImage;
             standardpic1.TabIndex = 0;
             standardpic1.TabStop = false;
             // 
             // standardpic3
             // 
-            standardpic3.BorderRadius = 10;
             standardpic3.CustomizableEdges = customizableEdges5;
             standardpic3.Image = (Image)resources.GetObject("standardpic3.Image");
             standardpic3.ImageRotate = 0F;
-            standardpic3.Location = new Point(61, 40);
+            standardpic3.Location = new Point(23, 27);
             standardpic3.Name = "standardpic3";
             standardpic3.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            standardpic3.Size = new Size(206, 131);
+            standardpic3.Size = new Size(244, 161);
             standardpic3.SizeMode = PictureBoxSizeMode.Zoom;
             standardpic3.TabIndex = 0;
             standardpic3.TabStop = false;
             // 
             // panelforbgroomtypes
             // 
+            panelforbgroomtypes.Anchor = AnchorStyles.None;
             panelforbgroomtypes.Controls.Add(standardpic2);
             panelforbgroomtypes.Controls.Add(Suitesrooms);
             panelforbgroomtypes.Controls.Add(DeluxeRoom);
@@ -194,51 +212,79 @@
             panelforbgroomtypes.Location = new Point(115, 102);
             panelforbgroomtypes.Name = "panelforbgroomtypes";
             panelforbgroomtypes.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            panelforbgroomtypes.Size = new Size(1210, 537);
+            panelforbgroomtypes.Size = new Size(1325, 537);
             panelforbgroomtypes.TabIndex = 4;
+            // 
+            // standardpic2
+            // 
+            standardpic2.CustomizableEdges = customizableEdges7;
+            standardpic2.Image = (Image)resources.GetObject("standardpic2.Image");
+            standardpic2.ImageRotate = 0F;
+            standardpic2.Location = new Point(23, 344);
+            standardpic2.Name = "standardpic2";
+            standardpic2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            standardpic2.Size = new Size(244, 153);
+            standardpic2.SizeMode = PictureBoxSizeMode.StretchImage;
+            standardpic2.TabIndex = 5;
+            standardpic2.TabStop = false;
             // 
             // Suitesrooms
             // 
+            Suitesrooms.BorderColor = Color.Silver;
             Suitesrooms.BorderRadius = 10;
+            Suitesrooms.BorderThickness = 1;
             Suitesrooms.Controls.Add(noofroomsindelux);
+            Suitesrooms.Controls.Add(label2);
             Suitesrooms.Controls.Add(suitesroomstext);
             Suitesrooms.CustomizableEdges = customizableEdges9;
-            Suitesrooms.Location = new Point(285, 363);
+            Suitesrooms.Location = new Point(285, 344);
             Suitesrooms.Name = "Suitesrooms";
             Suitesrooms.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            Suitesrooms.Size = new Size(883, 144);
+            Suitesrooms.Size = new Size(1003, 153);
             Suitesrooms.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(57, 73);
+            label2.Name = "label2";
+            label2.Size = new Size(156, 21);
+            label2.TabIndex = 5;
+            label2.Text = "Number of rooms:";
             // 
             // DeluxeRoom
             // 
+            DeluxeRoom.BorderColor = Color.Silver;
             DeluxeRoom.BorderRadius = 10;
+            DeluxeRoom.BorderThickness = 1;
+            DeluxeRoom.Controls.Add(label3);
             DeluxeRoom.Controls.Add(deluxroomtext);
             DeluxeRoom.Controls.Add(noofroomsinsuites);
             DeluxeRoom.CustomizableEdges = customizableEdges11;
             DeluxeRoom.Location = new Point(285, 194);
             DeluxeRoom.Name = "DeluxeRoom";
             DeluxeRoom.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            DeluxeRoom.Size = new Size(883, 144);
+            DeluxeRoom.Size = new Size(1003, 144);
             DeluxeRoom.TabIndex = 5;
             // 
-            // standardpic2
+            // label3
             // 
-            standardpic2.BorderRadius = 10;
-            standardpic2.CustomizableEdges = customizableEdges7;
-            standardpic2.Image = (Image)resources.GetObject("standardpic2.Image");
-            standardpic2.ImageRotate = 0F;
-            standardpic2.Location = new Point(61, 371);
-            standardpic2.Name = "standardpic2";
-            standardpic2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            standardpic2.Size = new Size(206, 131);
-            standardpic2.SizeMode = PictureBoxSizeMode.StretchImage;
-            standardpic2.TabIndex = 5;
-            standardpic2.TabStop = false;
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(57, 70);
+            label3.Name = "label3";
+            label3.Size = new Size(156, 21);
+            label3.TabIndex = 6;
+            label3.Text = "Number of rooms:";
             // 
             // Rooms_admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(240, 240, 240);
             Controls.Add(panelforbgroomtypes);
             Controls.Add(roomtypestext);
             Name = "Rooms_admin";
@@ -248,11 +294,11 @@
             ((System.ComponentModel.ISupportInitialize)standardpic1).EndInit();
             ((System.ComponentModel.ISupportInitialize)standardpic3).EndInit();
             panelforbgroomtypes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)standardpic2).EndInit();
             Suitesrooms.ResumeLayout(false);
             Suitesrooms.PerformLayout();
             DeluxeRoom.ResumeLayout(false);
             DeluxeRoom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)standardpic2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,5 +319,8 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel Suitesrooms;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel DeluxeRoom;
         private Guna.UI2.WinForms.Guna2PictureBox standardpic2;
+        private Label label1;
+        private Label label3;
+        private Label label2;
     }
 }

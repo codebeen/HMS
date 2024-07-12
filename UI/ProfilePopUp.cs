@@ -42,5 +42,6 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             ProfileNamePopUp.Text = UserSession.EmployeeName;
             ProfilePicturePopUp.Image = ImageHelper.ByteArrayToImage(UserSession.ProfilePicture);
         }
+
     }
 }

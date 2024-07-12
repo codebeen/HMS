@@ -54,10 +54,10 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
             var panel = sender as Guna2CustomGradientPanel; // Ensure correct type casting
             if (panel != null)
             {
-                panel.FillColor = Color.Gray;
-                panel.FillColor2 = Color.Gray;
-                panel.FillColor3 = Color.Gray;
-                panel.FillColor4 = Color.Gray;
+                panel.FillColor = Color.LightGray;
+                panel.FillColor2 = Color.LightGray;
+                panel.FillColor3 = Color.LightGray;
+                panel.FillColor4 = Color.LightGray;
             }
         }
 
@@ -105,6 +105,11 @@ namespace HOTEL_MANAGEMENT_SYSTEM.UI
         private void SetRoundedCorners(Control control, int radius)
         {
             control.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, control.Width, control.Height, radius, radius));
+        }
+
+        private void noofroomsinstandard_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
